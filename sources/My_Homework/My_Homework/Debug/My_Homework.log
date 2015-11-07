@@ -1,0 +1,29 @@
+﻿Сборка начата 27.10.2015 9:30:36.
+     1>Проект "C:\Users\Aleksandra Orova\Documents\Visual Studio 2013\Projects\My_Homework\My_Homework\My_Homework.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt func.c main.c
+         main.c
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(32): warning C4047: функция: "int" отличается по уровням косвенного обращения от "int *"
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(32): warning C4024: Bank: различные типы для формального и фактического параметров 1
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(32): warning C4024: Bank: различные типы для формального и фактического параметров 2
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(43): warning C4047: функция: "int" отличается по уровням косвенного обращения от "int *"
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(43): warning C4024: House: различные типы для формального и фактического параметров 1
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(43): warning C4024: House: различные типы для формального и фактического параметров 2
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(43): warning C4024: House: различные типы для формального и фактического параметров 3
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(43): warning C4024: House: различные типы для формального и фактического параметров 4
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(43): warning C4024: House: различные типы для формального и фактического параметров 5
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(43): warning C4024: House: различные типы для формального и фактического параметров 6
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(52): warning C4047: функция: "int" отличается по уровням косвенного обращения от "int *"
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\main.c(52): warning C4024: C_and_I: различные типы для формального и фактического параметров 1
+         func.c
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\func.c(33): error C2057: требуется константное выражение
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\func.c(33): error C2466: невозможно выделить память для массива постоянного нулевого размера
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\func.c(33): error C2087: mas: отсутствует индекс
+     1>c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\func.c(71): error C2371: Matrix: переопределение; различные базовые типы
+                 c:\users\aleksandra orova\documents\visual studio 2013\projects\my_homework\my_homework\func.h(11): см. объявление "Matrix"
+         Создание кода...
+     1>Сборка проекта "C:\Users\Aleksandra Orova\Documents\Visual Studio 2013\Projects\My_Homework\My_Homework\My_Homework.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+Затраченное время: 00:00:00.95
