@@ -1,5 +1,7 @@
 #include"home.h"
 
+/// Не экономьте буковки для названия переменных
+/// и Home тоже слишком абстрактно
 int Home(int a, int b, int p, int q, int r, int s)
 {
     if ((a * b) < (p * q + r * s))

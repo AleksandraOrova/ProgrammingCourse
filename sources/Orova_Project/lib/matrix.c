@@ -31,6 +31,8 @@ void draw()
     }
 }
 
+/// Название fr мне ни о чем не говорит
+/// и a, b тоже
 int fr(int a, int b)
 {
     if ((a>0) && (a <= n) && (b>0) && (b <= m) && (mas[a][b] == 0))
@@ -43,6 +45,7 @@ int fr(int a, int b)
     }
 }
 
+/// Название matrix слишком абстрактно
 void Matrix()
 {
     while ((n>nn) || (m>mm) || (n<0) || (m<0))
