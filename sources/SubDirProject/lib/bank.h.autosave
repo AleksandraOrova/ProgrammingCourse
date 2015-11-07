@@ -1,0 +1,5 @@
+#ifndef BANK
+#define BANK
+int bank(int, int);
+#endif // BANK
+
