@@ -2,7 +2,7 @@
 #include"bank.h"
 #include"bank_console_ui.h"
 
-void Bank_Console_UI()
+void bank_Console_UI()
 {
     float summa, percent;
     printf(" Homework #1: Input, output and cycles\n\n");
@@ -13,5 +13,5 @@ void Bank_Console_UI()
     printf("    Please, input what is the percent at Your bank: \n\t");
     scanf("%f", &percent);
 
-    printf("After 5 years You will have %f rubbles.\n\n", Bank(summa, percent));
+    printf("After 5 years You will have %f rubbles.\n\n", bank(summa, percent));
 }

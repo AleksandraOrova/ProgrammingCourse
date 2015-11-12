@@ -14,23 +14,27 @@ int main(void)
         printf(" 1 - Homework #1: BANK\n\n");
         printf(" 2 - Homework #2 : HOMES\n\n");
         printf(" 3 - Homework #3 : CM to INCH\n\n");
-        printf(" 3 - Homework #4 : Matrixes\n\n");
+        printf(" 4 - Homework #4 : Matrixes\n\n");
+        printf(" 5 - Homework #5 : Strings\n\n");
         switch (getchar())
         {
         case'0':
             flag = 0;
             break;
         case'1':
-            Bank_Console_UI();
+            bank_Console_UI();
             break;
         case '2':
-            Home_Console_UI();
+            home_Console_UI();
             break;
         case'3':
             cm_to_inch_console();
             break;
         case'4':
             matrix_console_UI();
+            break;
+        case'5':
+            strings_console_UI();
             break;
         }
     }

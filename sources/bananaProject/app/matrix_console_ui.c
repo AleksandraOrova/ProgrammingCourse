@@ -12,3 +12,12 @@ void matrix_console_UI(){
     fillSpiralMatrix(array, n, m);
     printMatrix(array, n, m);
 }
+
+void printMatrix(int** array, int n, int m){
+    int i, j;
+    for (i = 0; i<n; i++){
+        for(j = 0; j<m; j++)
+            printf("%4d ", array[i][j]);
+        printf("\n");
+    }
+}

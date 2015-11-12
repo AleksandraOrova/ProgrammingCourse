@@ -1,11 +1,11 @@
 #include <cm_to_inch.h>
 
-float Cm_to_Inch(float cm)
+float cm_to_inch(float cm)
 {
     return (cm/2.54f);
 }
 
-float Inch_to_Cm(float inch)
+float inch_to_cm(float inch)
 {
     return (inch*2.54f);
 }

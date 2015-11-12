@@ -2,7 +2,7 @@
 #include"home.h"
 #include"home_console_ui.h"
 
-void Home_Console_UI()
+void home_Console_UI()
 {
     float a, b, p, q, r, s;
     printf(" Homework #2: Input, output and cycles\n\n");
@@ -23,7 +23,7 @@ void Home_Console_UI()
     printf("    Please, input linear dimensions of the second house: \n\n\t");
     //scanf("%d %d", &r, &s);*/
 
-    if (Home(a, b, p, q, r, s) == 1)
+    if (home(a, b, p, q, r, s) == 1)
         printf("Yes\n");
     else
         printf("No\n");

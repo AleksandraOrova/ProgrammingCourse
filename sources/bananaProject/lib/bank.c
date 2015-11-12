@@ -1,7 +1,7 @@
 #include<math.h>
 #include"bank.h"
 
-float Bank(float summa, float percent)
+float bank(float summa, float percent)
 {
     float result = summa;
     int i;
