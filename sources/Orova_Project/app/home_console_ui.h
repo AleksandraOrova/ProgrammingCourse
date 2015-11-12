@@ -1,5 +1,0 @@
-#ifndef HOME_CONSOLE_UI_H
-#define HOME_CONSOLE_UI_H
-
-#endif // HOME_CONSOLE_UI_H
-
