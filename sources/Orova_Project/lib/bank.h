@@ -2,6 +2,6 @@
 #define BANK_H
 #include<stdio.h>
 #include<math.h>
-int Bank(int , int);
+float Bank(float,float);
 #endif // BANK_H
 

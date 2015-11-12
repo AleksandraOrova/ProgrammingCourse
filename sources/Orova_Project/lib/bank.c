@@ -1,12 +1,11 @@
+#include<math.h>
 #include"bank.h"
 
-int Bank(int a, int b)
+float Bank(float summa, float percent)
 {
-    int Rez;
-    Rez = a*(1 + (b / 100)) ^ 5;
-    if (Rez > 0)
-        printf("After 5 years You will have %d rubbles.\n\n", Rez);
-    else
-        printf("Error.");
-    return Rez;
+    float result = summa;
+    int i;
+    for (i = 0; i<5; i++)
+        result *= (100+percent)/100;
+    return result;
 }

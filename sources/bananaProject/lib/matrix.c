@@ -10,7 +10,7 @@ int** initializeMatrix(int n, int m){
 }
 
 void fillSpiralMatrix(int** array, int n, int m){
-    int i, j, k = 1;
+    int j, k = 1;
     int horbeg = 0, horend = m-1, vertbeg = 0, vertend = n-1;
     while(1){
         for(j = horbeg; j<horend+1; j++)
