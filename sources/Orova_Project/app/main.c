@@ -17,6 +17,7 @@ int main()
         switch (getchar())
         {
         case'0':
+            /// Можно просто return 0?
             flag = 0;
             break;
         case'1':
@@ -36,8 +37,10 @@ int main()
         case'4':/*
             printf("    Homework #3 : Matrixes \n\n");
             printf("    Vvedite kolichestvo strok: \n\n\t");
+            /// Неверная форматная строка
             scanf("&d", &isz);
             printf("    Vvedite kolichestvo strok: \n\n\t");
+            /// Неверная форматная строка
             scanf("&d", &jsz);
             Matrix();*/
             break;

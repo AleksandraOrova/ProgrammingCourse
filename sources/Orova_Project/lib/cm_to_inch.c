@@ -1,5 +1,6 @@
 #include <cm_to_inch.h>
 
+/// нельзя заранее догадаться, что бы мог значить параметр L
 int Cm_to_Inch(int L)
 {
     int i;
