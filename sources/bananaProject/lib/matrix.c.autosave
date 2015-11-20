@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include "matrix.h"
 
+
+
 int** initializeMatrix(int n, int m){
     int **array, i;
     array=(int **)malloc(n*sizeof(int*));
