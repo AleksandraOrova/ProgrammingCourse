@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2015-11-21T00:21:05
+# Project created by QtCreator 2015-11-11T23:48:02
 #
 #-------------------------------------------------
 
@@ -10,9 +10,23 @@ TARGET = lib
 TEMPLATE = lib
 CONFIG += staticlib
 
-SOURCES += lib.cpp
+SOURCES += \
+    bank.c \
+    home.c \
+    cm_to_inch.c \
+    matrix.c \
+    strings.c \
+    matrix.c \
+    strings.c
 
-HEADERS += lib.h
+HEADERS += \
+    bank.h \
+    home.h \
+    cm_to_inch.h \
+    matrix.h \
+    strings.h \
+    matrix.h \
+    strings.h
 unix {
     target.path = /usr/lib
     INSTALLS += target
