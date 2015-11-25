@@ -1,4 +1,3 @@
-
 #include <cm_to_inch.h>
 
 float cm_to_inch(float cm)

@@ -5,7 +5,8 @@ using namespace std;
 int main()
 {
     cout << "My first C++ project!" << endl;
-    int v=5;
+    int A[N];
+    int B[N];
     Set set;
     set.Copy();
     set.Summa();

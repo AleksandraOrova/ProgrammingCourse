@@ -17,7 +17,7 @@ void Set::Summa()
     std::cout << "Hello summa" << std::endl;
 }
 
-void Set::Intersection()
+void Set::Intersection(A, B)
 {
     std::cout << "Hello intersection" << std::endl;
 }
