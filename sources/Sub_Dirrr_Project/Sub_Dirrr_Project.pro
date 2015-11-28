@@ -1,11 +1,13 @@
 TEMPLATE = subdirs
 
 app.depends = lib
+app.depends = test
 
 SUBDIRS += \
     app \
     lib \
-    set
+    set \
+    test
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/lib/release/ -llib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/lib/debug/ -llib

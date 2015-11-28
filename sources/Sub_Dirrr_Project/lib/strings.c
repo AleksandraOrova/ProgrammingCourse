@@ -17,7 +17,7 @@ char* initialize_string(int max){
 
 void input_text(char** text, int rows, int max){
     int i;
-    getchar();//считываем предыдущий enter
+    //getchar();//считываем предыдущий enter
     for (i = 0; i<rows; i++)
         get_string(text[i], max);
 }
@@ -110,7 +110,7 @@ void spread_text(char** text, int rows){
                 int count = maxLength - get_length(text[i]);
                 int j;
                 for(j = spaces; j>0; j--){
-                    printf("%d\t\t%d\t%d - %d = %d\n", i, spaces, maxLength, get_length(text[i]), count);
+                    //printf("%d\t\t%d\t%d - %d = %d\n", i, spaces, maxLength, get_length(text[i]), count);
                     text[i] = insert_chars(text[i],get_char_index(text[i],' ',j),' ', count/spaces+(j>(spaces-count%spaces)?1:0));
                 }
             }
