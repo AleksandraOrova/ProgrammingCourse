@@ -1,5 +1,10 @@
 #ifndef STRINGS_H
 #define STRINGS_H
+
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 void get_string(char*, int);
 char** initialize_text(int, int);
 char* initialize_string(int);
@@ -13,4 +18,9 @@ char* insert_chars(char*, int, char, int);
 void spread_text(char**, int);
 int get_char_index(char*, char, int);
 int count_chars(char*, char);
+
+
+#ifdef __cplusplus
+}
+#endif
 #endif // STRINGS_H
