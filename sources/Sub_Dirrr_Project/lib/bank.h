@@ -1,4 +1,20 @@
-#ifndef BANK_H
 #define BANK_H
-float bank(float,float);
+#include<stdio.h>
+#include<stdio.h>
+#include<math.h>
+#include<math.h>
+
+#ifdef __cplusplus
+extern "C"{
+#endif
+
+
+int Bank(int , int);
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // BANK_H
 #endif // BANK_H
