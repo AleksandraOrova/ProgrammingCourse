@@ -1,3 +1,4 @@
+#ifndef BANK_H
 #define BANK_H
 #include<stdio.h>
 #include<stdio.h>
@@ -16,5 +17,4 @@ float Bank(float , float);
 }
 #endif
 
-#endif // BANK_H
 #endif // BANK_H
