@@ -22,14 +22,10 @@ TestTest::TestTest()
 
 /*void TestTest::bank_test()
 {
-    QCOMPARE(bank(1000, 20), 2488.320557);
-    QVERIFY2(true, "Failure");
 }
 
 void TestTest::home_test()
 {
-    QCOMPARE(home(100, 100, 23, 32, 12, 35), Yes);
-    QVERIFY2(true, "Failure");
 }
 
 void TestTest::cm2inch_test()
@@ -43,8 +39,6 @@ void TestTest::cm2inch_test()
 
 void TestTest::matrix_test()
 {
-    QCOMPARE(matrix(1000, 20), 2488.320557);
-    QVERIFY2(true, "Failure");
 }
 
 void TestTest::strings_test()

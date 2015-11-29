@@ -9,7 +9,7 @@ extern "C"{
 #endif
 
 
-int Bank(int , int);
+float Bank(float , float);
 
 
 #ifdef __cplusplus

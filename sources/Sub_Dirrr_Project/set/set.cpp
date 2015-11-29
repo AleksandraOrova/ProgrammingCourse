@@ -103,6 +103,7 @@ bool set::isEmpty()
     return (count()<=0);
 }
 
+/// Множество не хочет печататься в консоль
 void set::print()
 {
     std::cout << "(" << count() << "):\t";
