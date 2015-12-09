@@ -6,6 +6,7 @@ class HomeConsoleUICPP
 {
 public:
     HomeConsoleUICPP();
+    void doWork();
 };
 
 #endif // HOMECONSOLEUICPP_H

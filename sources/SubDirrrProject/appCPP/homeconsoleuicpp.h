@@ -2,10 +2,11 @@
 #define HOMECONSOLEUICPP_H
 
 
-class homeconsoleuicpp
+class HomeConsoleUICPP
 {
 public:
-    homeconsoleuicpp();
+    HomeConsoleUICPP();
+    void doWork();
 };
 
 #endif // HOMECONSOLEUICPP_H

@@ -1,5 +1,12 @@
-#ifndef BANKCONSOLEUI_H
-#define BANKCONSOLEUI_H
+#ifndef BankConsoleUICPP_H
+#define BankConsoleUICPP_H
 
-#endif // BANKCONSOLEUI_H
 
+class BankConsoleUICPP
+{
+public:
+    BankConsoleUICPP();
+    void doWork();
+};
+
+#endif // BankConsoleUICPP_H

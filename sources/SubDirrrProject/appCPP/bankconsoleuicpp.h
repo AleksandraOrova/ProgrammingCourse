@@ -6,6 +6,7 @@ class BankConsoleUICPP
 {
 public:
     BankConsoleUICPP();
+    void doWork();
 };
 
 #endif // BANKCONSOLEUICPP_H

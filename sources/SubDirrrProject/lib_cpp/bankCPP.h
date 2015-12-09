@@ -1,5 +1,14 @@
-#ifndef BANK_H
-#define BANK_H
+#ifndef BankCPP_H
+#define BankCPP_H
 
-#endif // BANK_H
 
+class BankCPP
+{
+public:
+    float summa;
+    float percent;
+    BankCPP(float, float);
+    float doWork();
+};
+
+#endif // BankCPP_H

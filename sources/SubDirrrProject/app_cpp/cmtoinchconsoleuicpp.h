@@ -6,6 +6,7 @@ class CmToInchConsoleUICPP
 {
 public:
     CmToInchConsoleUICPP();
+    void doWork();
 };
 
 #endif // CMTOINCHCONSOLEUICPP_H

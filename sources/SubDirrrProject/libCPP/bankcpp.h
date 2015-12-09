@@ -5,7 +5,10 @@
 class BankCPP
 {
 public:
-    BankCPP();
+    float summa;
+    float percent;
+    BankCPP(float, float);
+    float doWork();
 };
 
 #endif // BANKCPP_H

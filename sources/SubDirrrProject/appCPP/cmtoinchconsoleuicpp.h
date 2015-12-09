@@ -2,10 +2,11 @@
 #define CMTOINCHCONSOLEUICPP_H
 
 
-class cmtoinchconsoleuicpp
+class CmToInchConsoleUICPP
 {
 public:
-    cmtoinchconsoleuicpp();
+    CmToInchConsoleUICPP();
+    void doWork();
 };
 
 #endif // CMTOINCHCONSOLEUICPP_H

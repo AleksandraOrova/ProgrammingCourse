@@ -1,11 +1,13 @@
-#ifndef CMTOINCH_H
-#define CMTOINCH_H
+#ifndef CMTOINCHCPP_H
+#define CMTOINCHCPP_H
 
 
-class cmtoinch
+class cmtoinchcpp
 {
 public:
-    cmtoinch();
+    cmtoinchcpp();
+    double cm_to_inch(double);
+    double inch_to_cm(double);
 };
 
-#endif // CMTOINCH_H
+#endif // CMTOINCHCPP_H

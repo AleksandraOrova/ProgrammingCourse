@@ -3,6 +3,7 @@
 #include"home_console_ui.h"
 #include"cm_to_inch_console_ui.h"
 #include"matrix_console_ui.h"
+#include"strings_console_ui.h"
 
 void printHelp()
 {

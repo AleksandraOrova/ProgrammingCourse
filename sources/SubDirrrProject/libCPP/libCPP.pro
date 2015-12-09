@@ -10,9 +10,19 @@ TARGET = libCPP
 TEMPLATE = lib
 CONFIG += staticlib
 
-SOURCES += libcpp.cpp
+SOURCES += \
+    bankcpp.cpp \
+    cmtoinchcpp.cpp \
+    homecpp.cpp \
+    matrixcpp.cpp \
+    stringscpp.cpp
 
-HEADERS += libcpp.h
+HEADERS += libcpp.h \
+    bankcpp.h \
+    cmtoinchcpp.h \
+    homecpp.h \
+    matrixcpp.h \
+    stringscpp.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

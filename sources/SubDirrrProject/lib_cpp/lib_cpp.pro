@@ -3,5 +3,13 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += main.cpp
+SOURCES += \
+    bankCPP.cpp \
+    homecpp.cpp \
+    cmtoinchcpp.cpp
+
+HEADERS += \
+    bankCPP.h \
+    homecpp.h \
+    cmtoinchcpp.h
 

@@ -7,4 +7,7 @@ SUBDIRS += \
     app \
     lib \
     set \
+    appCPP \
+    libCPP \
     test
+
