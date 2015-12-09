@@ -1,0 +1,5 @@
+#ifndef STRINGS_CONSOLE_UI
+#define STRINGS_CONSOLE_UI
+
+#endif // STRINGS_CONSOLE_UI
+

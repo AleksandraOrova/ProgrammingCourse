@@ -1,0 +1,5 @@
+#ifndef HOME_CONSOLE_UI
+#define HOME_CONSOLE_UI
+
+#endif // HOME_CONSOLE_UI
+

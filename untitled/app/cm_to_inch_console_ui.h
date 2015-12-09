@@ -1,0 +1,5 @@
+#ifndef CM_TO_INCH_CONSOLE_UI
+#define CM_TO_INCH_CONSOLE_UI
+
+#endif // CM_TO_INCH_CONSOLE_UI
+

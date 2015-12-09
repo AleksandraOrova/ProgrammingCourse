@@ -1,0 +1,5 @@
+#ifndef MATRIX_CONSOLE_UI
+#define MATRIX_CONSOLE_UI
+
+#endif // MATRIX_CONSOLE_UI
+
