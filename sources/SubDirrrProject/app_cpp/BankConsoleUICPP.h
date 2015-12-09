@@ -1,0 +1,5 @@
+#ifndef BANKCONSOLEUI_H
+#define BANKCONSOLEUI_H
+
+#endif // BANKCONSOLEUI_H
+
