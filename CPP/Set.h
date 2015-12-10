@@ -1,11 +1,25 @@
 #ifndef SET_H
 #define SET_H
 
-
-class Set
+class set
 {
 public:
-    Set();
+
+    set();
+    ~set();
+    void add(int);
+    void add(set);
+    bool contains(int);
+    bool contains(set);
+    set copy(set);
+    set intersect(set s);
+    int count();
+    bool isEmpty();
+
+private:
+    Node *root;
+    void addToBeg(int);
+    Node* searchByKey(int);
 };
 
 #endif // SET_H

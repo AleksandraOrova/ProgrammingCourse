@@ -10,9 +10,19 @@ TARGET = lib
 TEMPLATE = lib
 CONFIG += staticlib
 
-SOURCES += lib.cpp
+SOURCES += \
+    bank.c \
+    cm_to_inch.c \
+    home.c \
+    matrix.c \
+    strings.c
 
-HEADERS += lib.h
+HEADERS += \
+    bank.h \
+    cm_to_inch.h \
+    home.h \
+    matrix.h \
+    strings.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

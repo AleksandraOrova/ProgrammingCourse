@@ -1,5 +1,15 @@
-#ifndef CM_TO_INCH
-#define CM_TO_INCH
+#ifndef CM_TO_INCH_H
+#define CM_TO_INCH_H
 
-#endif // CM_TO_INCH
+#ifdef __cplusplus
+extern "C"{
+#endif
 
+double cm_to_inch(double);
+double inch_to_cm(double);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // CM_TO_INCH_H

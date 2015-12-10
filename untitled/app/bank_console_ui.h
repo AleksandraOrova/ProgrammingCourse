@@ -1,5 +1,4 @@
-#ifndef BANK_CONSOLE_UI
-#define BANK_CONSOLE_UI
-
-#endif // BANK_CONSOLE_UI
-
+#ifndef BANK_CONSOLE_UI_H
+#define BANK_CONSOLE_UI_H
+void bank_Console_UI();
+#endif // BANK_CONSOLE_UI_H

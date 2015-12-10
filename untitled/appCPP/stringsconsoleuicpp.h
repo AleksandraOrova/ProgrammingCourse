@@ -6,6 +6,7 @@ class StringsConsoleUICPP
 {
 public:
     StringsConsoleUICPP();
+    void doWork();
 };
 
 #endif // STRINGSCONSOLEUICPP_H
