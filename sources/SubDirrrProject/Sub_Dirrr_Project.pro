@@ -9,5 +9,6 @@ SUBDIRS += \
     set \
     appCPP \
     libCPP \
-    test
+    test \
+    testCPP
 
