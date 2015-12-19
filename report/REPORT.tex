@@ -1,0 +1,840 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+%\usepackage{tikz-uml}               % uml диаграммы
+
+% Генератор текста
+\usepackage{blindtext}
+
+%------------------------------------------------------------------------------
+
+% Подсветка синтаксиса
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+ 
+ % Цвета для кода
+\definecolor{string}{HTML}{B40000} % цвет строк в коде
+\definecolor{comment}{HTML}{008000} % цвет комментариев в коде
+\definecolor{keyword}{HTML}{1A00FF} % цвет ключевых слов в коде
+\definecolor{morecomment}{HTML}{8000FF} % цвет include и других элементов в коде
+\definecolor{captiontext}{HTML}{FFFFFF} % цвет текста заголовка в коде
+\definecolor{captionbk}{HTML}{999999} % цвет фона заголовка в коде
+\definecolor{bk}{HTML}{FFFFFF} % цвет фона в коде
+\definecolor{frame}{HTML}{999999} % цвет рамки в коде
+\definecolor{brackets}{HTML}{B40000} % цвет скобок в коде
+ 
+ % Настройки отображения кода
+\lstset{
+language=C, % Язык кода по умолчанию
+morekeywords={*,...}, % если хотите добавить ключевые слова, то добавляйте
+ % Цвета
+keywordstyle=\color{keyword}\ttfamily\bfseries,
+stringstyle=\color{string}\ttfamily,
+commentstyle=\color{comment}\ttfamily\itshape,
+morecomment=[l][\color{morecomment}]{\#}, 
+ % Настройки отображения     
+breaklines=true, % Перенос длинных строк
+basicstyle=\ttfamily\footnotesize, % Шрифт для отображения кода
+backgroundcolor=\color{bk}, % Цвет фона кода
+%frame=lrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep, % Рамка, подогнанная к заголовку
+frame=tblr
+rulecolor=\color{frame}, % Цвет рамки
+tabsize=3, % Размер табуляции в пробелах
+showstringspaces=false,
+ % Настройка отображения номеров строк. Если не нужно, то удалите весь блок
+numbers=left, % Слева отображаются номера строк
+stepnumber=1, % Каждую строку нумеровать
+numbersep=5pt, % Отступ от кода 
+numberstyle=\small\color{black}, % Стиль написания номеров строк
+ % Для отображения русского языка
+extendedchars=true,
+literate={Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+  {~}{{\textasciitilde}}1
+  {а}{{\selectfont\char224}}1
+  {б}{{\selectfont\char225}}1
+  {в}{{\selectfont\char226}}1
+  {г}{{\selectfont\char227}}1
+  {д}{{\selectfont\char228}}1
+  {е}{{\selectfont\char229}}1
+  {ё}{{\"e}}1
+  {ж}{{\selectfont\char230}}1
+  {з}{{\selectfont\char231}}1
+  {и}{{\selectfont\char232}}1
+  {й}{{\selectfont\char233}}1
+  {к}{{\selectfont\char234}}1
+  {л}{{\selectfont\char235}}1
+  {м}{{\selectfont\char236}}1
+  {н}{{\selectfont\char237}}1
+  {о}{{\selectfont\char238}}1
+  {п}{{\selectfont\char239}}1
+  {р}{{\selectfont\char240}}1
+  {с}{{\selectfont\char241}}1
+  {т}{{\selectfont\char242}}1
+  {у}{{\selectfont\char243}}1
+  {ф}{{\selectfont\char244}}1
+  {х}{{\selectfont\char245}}1
+  {ц}{{\selectfont\char246}}1
+  {ч}{{\selectfont\char247}}1
+  {ш}{{\selectfont\char248}}1
+  {щ}{{\selectfont\char249}}1
+  {ъ}{{\selectfont\char250}}1
+  {ы}{{\selectfont\char251}}1
+  {ь}{{\selectfont\char252}}1
+  {э}{{\selectfont\char253}}1
+  {ю}{{\selectfont\char254}}1
+  {я}{{\selectfont\char255}}1
+  {А}{{\selectfont\char192}}1
+  {Б}{{\selectfont\char193}}1
+  {В}{{\selectfont\char194}}1
+  {Г}{{\selectfont\char195}}1
+  {Д}{{\selectfont\char196}}1
+  {Е}{{\selectfont\char197}}1
+  {Ё}{{\"E}}1
+  {Ж}{{\selectfont\char198}}1
+  {З}{{\selectfont\char199}}1
+  {И}{{\selectfont\char200}}1
+  {Й}{{\selectfont\char201}}1
+  {К}{{\selectfont\char202}}1
+  {Л}{{\selectfont\char203}}1
+  {М}{{\selectfont\char204}}1
+  {Н}{{\selectfont\char205}}1
+  {О}{{\selectfont\char206}}1
+  {П}{{\selectfont\char207}}1
+  {Р}{{\selectfont\char208}}1
+  {С}{{\selectfont\char209}}1
+  {Т}{{\selectfont\char210}}1
+  {У}{{\selectfont\char211}}1
+  {Ф}{{\selectfont\char212}}1
+  {Х}{{\selectfont\char213}}1
+  {Ц}{{\selectfont\char214}}1
+  {Ч}{{\selectfont\char215}}1
+  {Ш}{{\selectfont\char216}}1
+  {Щ}{{\selectfont\char217}}1
+  {Ъ}{{\selectfont\char218}}1
+  {Ы}{{\selectfont\char219}}1
+  {Ь}{{\selectfont\char220}}1
+  {Э}{{\selectfont\char221}}1
+  {Ю}{{\selectfont\char222}}1
+  {Я}{{\selectfont\char223}}1
+  {і}{{\selectfont\char105}}1
+  {ї}{{\selectfont\char168}}1
+  {є}{{\selectfont\char185}}1
+  {ґ}{{\selectfont\char160}}1
+  {І}{{\selectfont\char73}}1
+  {Ї}{{\selectfont\char136}}1
+  {Є}{{\selectfont\char153}}1
+  {Ґ}{{\selectfont\char128}}1
+  {\{}{{{\color{brackets}\{}}}1 % Цвет скобок {
+  {\}}{{{\color{brackets}\}}}}1 % Цвет скобок }
+}
+ 
+ % Для настройки заголовка кода
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{сaptiontext}}
+\DeclareCaptionFormat{listing}{\parbox{\linewidth}{\colorbox{сaptionbk}{\parbox{\linewidth}{#1#2#3}}\vskip-4pt}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\renewcommand{\lstlistingname}{Код} % Переименование Listings в нужное именование структуры
+
+
+%------------------------------------------------------------------------------
+
+\author{А.~Д.~Орова}
+\title{Программирование}
+\begin{document}
+\maketitle
+\tableofcontents{}
+
+\chapter{Основные конструкции языка}
+%############################################################
+\section{1. Банковская задача}
+\subsection{Задание}
+\hspace{\parindent}
+Человек положил в банк сумму в s рублей под p\% годовых (проценты начисляются в конце года). Сколько денег будет на счету через 5 лет? 
+
+\subsection{Теоретические сведения}
+\hspace{\parindent}
+Для решения данной задачи используется формула вычисления сложного процента: \begin{displaymath} S = x + (1 + P)^{n}  \end{displaymath}, где $S$ - конечная сумма, $x$ - начальная сумма,$P$ - процентная ставка и $n$ - количество кварталов (лет).
+
+Для реализации данного алгоритма был использован цикл for, счетчиком которого является количество лет, данное в задании. Также были применены функции библиотек stdio для ввода и вывода информации и math для выполнения необходимых вычислений.
+
+
+\subsection{Проектирование}
+\hspace{\parindent}
+В ходе проектирования было решено выделить две функции.
+	\begin{enumerate}
+		\item \textbf{bank}
+		 Функция вычисляет конечную сумму денег по вкладу в банк на 5 лет при определенном проценте, передаваемым в программу пользователем.
+		 Параметрами функции являются две переменные типа float: $summa$ и $percent$. В первую переменную передается первоначальная сумма, которую пользователь желает положить в банк, во вторую - процент, под который кладутся деньги.	 
+		\item \textbf{bank\_console\_ui}	 
+		 В этой функции реализованно взаимодействие с пользователем. В ней выполняется считывание 2 значений из консоли. Если данные введены правильно, то выполняется функция b, аргументами которой являются данные введенные пользователем, затем в зависимости от значения, которое вернула эта функция, в  консоль выводится соответствющее сообщение. 		
+	\end{enumerate}
+	
+\subsection{Описание тестового стенда и методики тестирования}
+\hspace{\parindent}
+Среда разработки QtCreator 3.5.0, компилятор Qt 5.5.0 MinGW 32bit, операционная система Ubuntu 14.04. Были проведены ручные, а также модульные тесты.
+
+\subsection{Тестовый план и результаты тестирования}
+\begin{enumerate}
+\item \textbf{Ручные тесты}
+\begin{description}
+\item[I тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 1000 20
+\item[Выходные данные:] 2488,32
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\begin{description}
+\item[II тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 100 15
+\item[Выходные данные:] 201,13
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\item \textbf{Модульные тесты \textit{Qt}}
+\begin{description}
+\item[I тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 200 25
+\item[Выходные данные:] 610,35
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\begin{description}
+\item[II тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 10 90
+\item[Выходные данные:] 247,60
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\end{enumerate}
+
+\subsection{Выводы}
+\hspace{\parindent}
+При выполнении задания я отработала свои навыки в работе с основными конструкциями языка и получила опыт в организации функций одной программы.
+\subsection*{Листинги}
+\begin{itemize}
+\item[] \verb-bank.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/lib/bank.c}
+\item[] \verb-bank_console_ui.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/bank_console_ui.c}
+\item[] \verb-bank.h.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/lib/bank.h}
+\item[] \verb-bank_console_ui.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/bank_console_ui.h}
+\end{itemize}
+
+%\todo[inline]{Не забыть вставить все исходники}
+%##################################################################################################################################################
+%
+%##################################################################################################################################################
+
+\section{Задание}
+\subsection{2. Возможность расположения домов на участке}
+\hspace{\parindent}
+Определить, можно ли на прямоугольном участке застройки размером а на b метров разместить 2 дома размером р на q и r на s метров? Дома можно располагать только параллельно сторонам участка.
+
+\subsection{Теоретические сведения}
+\hspace{\parindent}
+Для решения данной задачи необходимо знать, поместятся ли 2 дома на участке, и на каком участке. То есть если один дом не будет перекрывать другой, также находящийся на данной терртории, то программа выдаст положительный ответ. Иначе, если физически невозможно расположить 2 дома на однй территории, то программа выдаст отрицательный ответ. Мной была использована конструкция if...else. А также  функции библеотек stdio для ввода и вывода.
+
+\subsection{Проектирование}
+\hspace{\parindent}
+Для решения данной задачи я использую 6 переменных, в каждую из которых передаю линейную характеристику дома.
+	В ходе проектирования были выделены следущие функции:
+\begin{enumerate}
+	\item \textbf{home}
+	В  функции выполняется проверка того, могут ли быть два конкретных дома поместиться на конкретном  участке. Проверка необходимо, так как в некоторых случаях два дома могут перекрывать участки друг друга. Условие состоит в том, чтобы такого перекрытия не было.
+	Параметрами функции являются шесть переменных типа int. Если аргументы соответсвуют условию, то функциия вернет 1, в противном случае функция вернет 0.
+		\item \textbf{home\_console\_ui}
+	Функция реализует взаимодействие с пользователем, который вводит длины домов. В случае, если предыдущая функция возвращает 1, то данная функция выведет на экран Yes, иначе No.
+\end{enumerate}
+
+\subsection{Описание тестового стенда и методики тестирования}
+\hspace{\parindent}
+Среда разработки QtCreator 3.5.0, компилятор Qt 5.5.0 MinGW 32bit, операционная система Ubuntu 14.04. Были проведены ручные, а также модульные тесты.
+
+\subsection{Тестовый план и результаты тестирования}
+\begin{enumerate}
+\item \textbf{Ручные тесты}
+\begin{description}
+\item[I тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 50 60 40 30 40 40
+\item[Выходные данные:] No
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\begin{description}
+\item[II тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 90 90 70 40 30 80
+\item[Выходные данные:] Yes
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\item \textbf{Модульные тесты \textit{Qt}}
+\begin{description}
+\item[I тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 40 70 30 30 30 30
+\item[Выходные данные:] Yes
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\begin{description}
+\item[II тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 80 30 40 50 20 20 
+\item[Выходные данные:] No
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\end{enumerate}
+
+\subsection{Выводы}
+\hspace{\parindent} 
+При выполнении задания я научилась использовать конструкцию if...else для решения не совсем тривиальных задач.
+\subsection*{Листинги}
+\begin{itemize}
+\item[] \verb-home.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/lib/home.c}
+\item[] \verb-home_console_ui.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/home_console_ui.c}
+\item[] \verb-home.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/lib/home.h}
+\item[] \verb-home_console_ui.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/home_console_ui.h}
+\end{itemize}
+%##################################################################################################################################################
+%
+%##################################################################################################################################################
+\chapter{Циклы}
+\section{Таблица перевода из дюймов в сантиметры}
+\subsection{Задание}
+\hspace{\parindent}
+Вывести на экран таблицу пересчета сантиметров в дюймы и обратно до заданного расстояния в сантиметрах, по возрастанию расстояний, как указано в примере (1 дюйм = 2.54 см). Пример для 6 см:
+	
+\begin{center}
+\begin{tabular}{ccc}
+	дюймы  &  см \\
+	0.39 &  1.00 \\
+	0.79 &  2.00 \\
+	1.00 &  2.54 \\
+	1.18 &  3.00 \\
+	1.57 &  4.00 \\
+	1.97 &  5.00 \\
+	2.00 &  5.08 \\
+	2.36 &  6.00\\
+\end{tabular}
+\end{center}	
+	
+\subsection{Теоритические сведения}
+\hspace{\parindent}
+Для того, чтобы перевести из сантиметров в дюймы необходимо количество сантиметров поделить на эквивалент, равный 2,54. Для того чтобы перевести из дюймов в сантиметры - соответственно умножить на 2,54.
+	Для выполнения задания использоваилсь функции библиотеки stdio для ввода и вывода.
+	
+\subsection{Проектирование}
+\hspace{\parindent}
+В ходе проектирования было выделено три функции:
+\begin{enumerate}
+	\item \textbf{cm\_to\_inch}
+	Функция возвращает переданное ей количество сантиметров, поделенное на эквивалент.
+	Параметром функции является переменная типа float.
+	\item \textbf{inch\_to\_cm}
+	Функция возвращает переданное ей количество дюймов, поделенное на эквивалент.
+	Параметром функции является переменная типа float.	
+	\item \textbf{inch\_to\_cm\_console\_ui}
+	В  Функции реализованно взаимодействие с пользователем. В ней выполняется считывание из консоли числа, равного количеству сантиметров, котоое пользователь хочет перевести в сантиметры. Пользователю на экран выводится таблица от 1 сантиметра до введенного значения.	
+\end{enumerate}
+
+\subsection{Описание тестового стенда и методики тестирования}
+\hspace{\parindent}
+Среда разработки QtCreator 3.5.0, компилятор Qt 5.5.0 MinGW 32bit, операционная система Ubuntu 14.04. Были проведены ручные, а также модульные тесты.
+
+\subsection{Тестовый план и результаты тестирования}
+\hspace{\parindent}
+\begin{enumerate}
+\item \textbf{Ручные тесты}
+\begin{description}
+\item[I тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 3
+\item[Выходные данные:]  \verb/"0,39\t 1,00\n 0,79\t 2,00\n 1,00\t 2,54\n 1,18\t 3,00\n"/ 
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\begin{description}
+\item[II тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 4
+\item[Выходные данные:] \verb/"0,39\t 1,00\n 0,79\t 2,00\n 1,00\t 2,54\n 1,18\t 3,00\n 1,57\t 4,00\n"/ 
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\item \textbf{Модульные тесты \textit{Qt}}
+\begin{description}
+\item[I тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 2
+\item[Выходные данные:] \verb/"0,39\t 1,00\n 0,79\t 2,00\n"/ 
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\begin{description}
+\item[II тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 5
+\item[Выходные данные:] \verb/"0,39\t 1,00\n 0,79\t/
+\verb/2,00\n 1,00\t 2,54\n 1,18\t 3,00\n 1,57\t 4,00\n 1.97\t 5,00"/ 
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\end{enumerate}
+\subsection{Выводы}
+\hspace{\parindent}
+В ходе выполнения я отработала навыки работы с циклом с предусловием. 
+\subsection*{Листинги}
+\begin{itemize}
+\item[] \verb-cm_to_inch.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/lib/cm_to_inch.c}
+\item[] \verb-cm_to_inch_console_ui.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/cm_to_inch_console_ui.c}
+\item[] \verb-cm_to_inch.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/lib/cm_to_inch.h}
+\item[] \verb-cm_to_inch_console_ui.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/cm_to_inch_console_ui.h}
+\end{itemize}
+
+%##################################################################################################################################################
+%
+%##################################################################################################################################################
+\chapter{Массивы}
+\section{Заполнение матрицы по спирали}
+\subsection{Задание}
+\hspace{\parindent}
+Матрицу A(m,n) заполнить натуральными числами от 1 до m*n по спирали, начинающейся в левом верхнем углу и закрученной по часовой стрелке.
+
+\subsection{Теоритические сведения}
+\hspace{\parindent}
+Для выполнения задания использовался цикл for, конструкция if...else, а также функции бибилиотек stdlib для динамического выделения и освобождения памяти, stdio для ввода, вывода информации и работы с файлами.
+
+\subsection{Проектирование}
+\hspace{\parindent} 
+В ходе проектирования были выделены четыре функции:
+\begin{enumerate}
+	\item \textbf{initializeMatrix}
+	Функция считывает из файла заданное количество целых чисел и сохраняет их в массив.
+	Параметрами функции являются символьная строку содержащая имя файла, массив типа int, куда будут сохранятся считанные числа и переменная типа int, содержащая количество элемнтов.
+	Функция возвращает количество успешно считанных из файла значений. 
+	\item \textbf{fillSpiralMatrix}	
+	С помощью цикла с предусловием for() инкремента "++", а также конструкции if...else функция заполняет двумерный массив как и необходимо в задании, то есть по спирали. 
+	\item \textbf{matrix\_console\_ui}
+	Функция открывает файл и закрывает его после всех действий, считывает размеры матрицы(двумерного массива), выделяет память и позже её освобождает. Основная цель данной фунцкии - взаимодействие с пользователем.
+	\item \textbf{printMatrix}	
+	Функция выводит матрицу, заполненную по спирали на экран в консоль.
+\end{enumerate}
+\subsection{Описание тестового стенда и методики тестирования}
+Среда разработки QtCreator 3.5.0, компилятор Qt 5.5.0 MinGW 32bit, операционная система Ubuntu 14.04. Были проведены ручные, а также модульные тесты.
+
+\subsection{Тестовый план и результаты тестирования}
+\hspace{\parindent}
+\begin{enumerate}
+\item \textbf{Модульные тесты \textit{Qt}}
+
+\begin{description}
+\item[I тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] 5 7
+\item[Выходные данные:]
+\hspace{\parindent}
+\begin{flushleft}
+ 1  2  3  4  5 
+
+20 21 22 23  6
+
+19 32 33 24  7
+
+18 31 34 25  8
+
+17 30 35 26  9
+
+16 29 28 27 10
+
+15 14 13 12 11
+\end{flushleft}
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\item \textbf{Статический анализ \textit{cppcheck}}
+
+Утилита \textit{cppcheck} не выдала никаких предупреждений.
+\end{enumerate}
+\subsection{Выводы}
+\hspace{\parindent}
+При выполнении задания я поняла принцип организации программы при работе с выделением динамической памяти, научилася работать с файлами.
+\subsection*{Листинги}
+\begin{itemize}
+\item[] \verb-matrix.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/lib/matrix.c}
+\item[] \verb-matrix_console_ui.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/matrix_console_ui.c}
+\item[] \verb-matrix.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/lib/matrix.h}
+\item[] \verb-matrix_console_ui.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/matrix_console_ui.h}
+\end{itemize}
+
+
+%##################################################################################################################################################
+%
+%##################################################################################################################################################
+\chapter{Строки}
+\section{Выравнивание по ширине}
+\subsection{Задание}
+\hspace{\parindent}
+Для реализации данной задачи было решено создать некоторое количество 
+\subsection{Проектирование}
+%Какие функции было решено выделить, какие у этих функций контракты, как организовано взаимодействие с пользователем (чтение/запись из консоли, из файла, из параметров командной строки), форматы файлов и др.
+\hspace{\parindent}
+В ходе проектирования было решено выделить 5 функций, 2 из которых отвечают за логику, а остальные -- за взаимодействие с пользователем.
+\begin{enumerate}
+
+	\item \textbf{cm\_to\_inch\_console\_ui}
+	Функция для взаимодействия пользователем.
+	
+	\item \textbf{initialize\_text}
+	Функция инициализирует введенный текст, а также выделяет на него память.
+
+	\item \textbf{initialize\_string}
+	Функция инициализирует переданную ей строку.
+	
+	\item \textbf{input\_text}
+	Функция считывает строку.
+	
+	\item \textbf{print\_text}
+	Функция выводит на экран текст.
+	
+	\item \textbf{get\_length}
+	Функция считывает длину строки.
+	
+	\item \textbf{count\_spaces}
+	Функция считает количество пробелов в строке.
+	
+	\item \textbf{count\_chars}
+	Функция считает количество символов в строке.
+	
+	\item \textbf{get\_max\_string\_length}
+	Функция ищет среди строк самую длинную.
+	
+	\item \textbf{insert\_char}
+	Функция вставляет символ.
+	
+	\item \textbf{insert\_chars}
+	Функция вставляет символы.
+	
+	\item \textbf{get\_string}
+	Функция считывающая строку (массив).
+	
+	\item \textbf{get\_char\_index}
+	Функция, возвращающая индекс num-ового вхождения символа chr в строку str.
+	
+	\item \textbf{spread\_text}
+	Функция, которая работает с пробелами.	
+
+\end{enumerate}
+\subsection{Описание тестового стенда и методики тестирования}
+Среда разработки QtCreator 3.5.0, компилятор Qt 5.5.0 MinGW 32bit, операционная система Ubuntu 14.04. Были проведены ручные, а также модульные тесты.
+
+\subsection{Тестовый план и результаты тестирования}
+\hspace{\parindent}
+\begin{enumerate}
+\item \textbf{Модульные тесты \textit{Qt}}
+
+\begin{description}
+\item[I тест]
+\hspace{\parindent}
+\begin{flushleft}
+\begin{description}
+\item[Входные данные:] \verb-"    dgrtf tfhrna f htya"- 
+
+
+\item[Выходные данные:] \verb-"dgrtf   tfhrna  f   htya"-
+
+\item[Результат:] Тест успешно пройден
+\end{description}
+\end{flushleft}
+\end{description}
+
+\item \textbf{Статический анализ \textit{cppcheck}}
+
+Утилита \textit{cppcheck} не выдала никаких предупреждений.
+\end{enumerate}
+
+\subsection{Выводы}
+\hspace{\parindent}
+В ходе работы я получила опыт в обработке строк, а также укрепила навык работы с файлами.
+\subsection*{Листинги}
+
+\begin{itemize}
+\item[] \verb-strings.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/lib/strings.c}
+\item[] \verb-strings_console_ui.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/strings_console_ui.c}
+\item[] \verb-strings.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/lib/matrix.h}
+\item[] \verb-strings_console_ui.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/matrix_console_ui.h}
+\end{itemize}
+%################################################################################################################
+%
+%################################################################################################################
+
+\chapter{Приложение к главам 1 - 4}
+
+\section{Листинги}
+\begin{itemize}
+\item[] \verb-main.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/app/main.c}
+\item[] \verb-main.c-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/test/tst_testtest.cpp}
+\end{itemize}
+%################################################################################################################
+%
+%################################################################################################################
+
+\chapter{Введение в классы С++}
+\section{Задание 1. Инкапсуляция. Множество}
+\subsection{Задание}
+\hspace{\parindent}
+Реализовать класс МНОЖЕСТВО (целых чисел). Требуемые методы: конструктор, деструктор, копирование, сложение множеств, пересечение множеств, добавление в множество, включение в множество.
+\subsection{Теоритические сведения}
+\hspace{\parindent}
+При разработке приложения была задействована объектная ориентированность языка C++. 
+
+\subsection{Проектирование}
+\hspace{\parindent}
+В ходе проектирования было решено выделить 2 класса: set и Node.
+
+\hspace{\parindent}
+Были выделены методы: \textit{set()} - конструктор, \~set()- деструктор, \textit{copy(set source\&)} - конструтор копирования, \textit{add(set added)} - сложение множеств, \textit{contains(set s)} - пересечение множеств, \textit{intersect(set s)} - добавление в множество, \textit{intersect(set s)} - включение в множество.
+Также были выделены вспомогательные методы.
+
+
+\subsection{Описание тестового стенда и методики тестирования}
+Среда разработки QtCreator 3.5.0, компилятор Qt 5.5.0 MinGW 32bit, операционная система Ubuntu 14.04. Были проведены ручные, а также модульные тесты.
+\subsection{Тестовый план и результаты тестирования}
+ДОДЕЛАТЬ
+\subsection{Выводы}
+\hspace{\parindent}
+Я познакомилася с языком С++. Познакомилася с новой парадигмой программирования - ООП.
+\subsection*{Листинги}
+\begin{itemize}
+\item[] \verb-main.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/set/main.cpp}
+\item[] \verb-node.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/set/node.cpp}
+\item[] \verb-set.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/set/set.cpp}
+\item[] \verb-node.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/set/node.h}
+\item[] \verb-set.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/set/set.h}
+\end{itemize}
+
+%################################################################################################################
+%
+%################################################################################################################
+
+\chapter{Классы С++}
+\section{Задание 1. Реализовать классы для всех приложений}
+\subsection{Задание}
+\hspace{\parindent}
+Реализовать классы для всех приложений. Поработать с потоками.
+\subsection{Выводы}
+\hspace{\parindent}
+Получила опыт создания классов. Получила опыт в работе с потоками.
+\subsection*{Листинги}
+\begin{itemize}
+
+\item[] \verb-bankconsoleuicpp.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/appCPP/bankconsoleuicpp.cpp}
+
+\item[] \verb-bankconsoleuicpp.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/appCPP/bankconsoleuicpp.h}
+
+\item[] \verb-cmtoinchconsoleuicpp.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/appCPP/cmtoinchconsoleuicpp.cpp}
+
+\item[] \verb-cmtoinchconsoleuicpp.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/appCPP/cmtoinchconsoleuicpp.h}
+
+\item[] \verb-homeconsoleuicpp.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/appCPP/homeconsoleuicpp.cpp}
+
+\item[] \verb-homeconsoleuicpp.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/appCPP/homeconsoleuicpp.h}
+
+\item[] \verb-matrixconsoleuicpp.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/appCPP/matrixconsoleuicpp.cpp}
+
+\item[] \verb-matrixconsoleuicpp.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/appCPP/matrixconsoleuicpp.h}
+
+\item[] \verb-stringsconsoleuicpp.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/appCPP/stringsconsoleuicpp.cpp}
+
+\item[] \verb-stringsconsoleuicpp.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/appCPP/stringsconsoleuicpp.h}
+
+\item[] \verb-bankcpp.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/libCPP/bankcpp.cpp}
+
+\item[] \verb-bankcpp.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/libCPP/bankcpp.h}
+
+\item[] \verb-cmtoinchcpp.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/libCPP/cmtoinchcpp.cpp}
+
+\item[] \verb-cmtoinchcpp.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/libCPP/cmtoinchcpp.h}
+
+\item[] \verb-homecpp.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/libCPP/homecpp.cpp}
+
+\item[] \verb-homecpp.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/libCPP/homecpp.h}
+
+\item[] \verb-matrixcpp.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/libCPP/matrixcpp.cpp}
+
+\item[] \verb-matrixcpp.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/libCPP/matrixcpp.h}
+
+\item[] \verb-stringscpp.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/libCPP/stringscpp.cpp}
+
+\item[] \verb-stringscpp.h-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/libCPP/stringscpp.h}
+
+\item[] \verb-tst_testcpptest.cpp-
+\lstinputlisting[]
+{../ProgrammingCourse/sources/SubDirrrProject/testCPP/tst_testcpptest.cpp}
+
+\end{itemize}
+\end{document}
