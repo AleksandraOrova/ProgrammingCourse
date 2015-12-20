@@ -17,7 +17,7 @@ SOURCES += \
     matrixcpp.cpp \
     stringscpp.cpp
 
-HEADERS += libcpp.h \
+HEADERS += \
     bankcpp.h \
     cmtoinchcpp.h \
     homecpp.h \

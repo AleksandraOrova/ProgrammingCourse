@@ -72,6 +72,13 @@ void TestTest::strings_test(){
     resText[3] = "b   nab    na";
     resText[4] = "       banana";
     char** tmpText = initialize_text(5, 255);
+    for (int i = 0; i < 5; ++i)
+    {
+        for(int j = 0; j < 255; j++)
+        {
+            QCOMPARE(tmpText[i][j], resText[i][j]);
+        }
+    }
 
 }
 
