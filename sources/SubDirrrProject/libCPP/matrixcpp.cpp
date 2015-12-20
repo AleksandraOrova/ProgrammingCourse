@@ -6,7 +6,8 @@ MatrixCPP::MatrixCPP()
 
 }
 
-
+/// Разве выделением ресурсов не положено заниматься в конструкторе?
+/// И освобождать кто будет?
 int** MatrixCPP::initializeMatrix(int n, int m){
     int **array, i;
     array=(int **)malloc(n*sizeof(int*));

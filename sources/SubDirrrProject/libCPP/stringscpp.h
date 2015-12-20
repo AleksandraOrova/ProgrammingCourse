@@ -1,11 +1,14 @@
 #ifndef STRINGSCPP_H
 #define STRINGSCPP_H
 
-
+/// разбираться не будем, но похоже, можно все методы сделать static
+/// Производит впечатление бредового класса
 class StringsCPP
 {
 public:
+
     StringsCPP();
+    /// Следует использовать строки из C++
     void get_string(char*, int);
     char** initialize_text(int, int);
     char* initialize_string(int);
