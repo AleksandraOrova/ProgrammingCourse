@@ -10,7 +10,7 @@ MatrixConsoleUICPP::MatrixConsoleUICPP()
 }
 
 void MatrixConsoleUICPP::doWork(char* input_file_name, char* output_file_name){
-
+/// Почему не файловые потоки, раз уж затеяли ввод-вывод
     FILE* in;
     FILE* out;
     in = fopen(input_file_name, "r");
