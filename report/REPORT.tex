@@ -10,6 +10,13 @@
 \usepackage{mathtext} 				% русские буквы в формулах
 %\usepackage{tikz-uml}               % uml диаграммы
 
+
+% TODOs
+\usepackage[%
+  colorinlistoftodos,
+  shadow
+]{todonotes}
+
 % Генератор текста
 \usepackage{blindtext}
 
@@ -155,6 +162,8 @@ literate={Ö}{{\"O}}1
 \author{А.~Д.~Орова}
 \title{Программирование}
 \begin{document}
+
+\listoftodos
 \maketitle
 \tableofcontents{}
 
@@ -169,22 +178,28 @@ literate={Ö}{{\"O}}1
 \hspace{\parindent}
 Для решения данной задачи используется формула вычисления сложного процента: \begin{displaymath} S = x + (1 + P)^{n}  \end{displaymath}, где $S$ - конечная сумма, $x$ - начальная сумма,$P$ - процентная ставка и $n$ - количество кварталов (лет).
 
-Для реализации данного алгоритма был использован цикл for, счетчиком которого является количество лет, данное в задании. Также были применены функции библиотек stdio для ввода и вывода информации и math для выполнения необходимых вычислений.
+Для реализации данного алгоритма был использован цикл for, счетчиком которого является
+количество лет, данное в задании. Также были применены
+\todo[inline]{функции стандартной библиотеки, описанные в заголовочном файле stdio.h и всюду это исправьте}
+  функции библиотек stdio для ввода и вывода информации и math для выполнения необходимых вычислений.
 
 
 \subsection{Проектирование}
 \hspace{\parindent}
 В ходе проектирования было решено выделить две функции.
+\todo[inline]{здесь лучше указывать полный прототип фукнции со списком параметров и типом возвращаемого значения}
+
 	\begin{enumerate}
-		\item \textbf{bank}
+		\item \verb+bank+	
 		 Функция вычисляет конечную сумму денег по вкладу в банк на 5 лет при определенном проценте, передаваемым в программу пользователем.
 		 Параметрами функции являются две переменные типа float: $summa$ и $percent$. В первую переменную передается первоначальная сумма, которую пользователь желает положить в банк, во вторую - процент, под который кладутся деньги.	 
-		\item \textbf{bank\_console\_ui}	 
+		\item \verb+bank_console_ui+	 
 		 В этой функции реализованно взаимодействие с пользователем. В ней выполняется считывание 2 значений из консоли. Если данные введены правильно, то выполняется функция b, аргументами которой являются данные введенные пользователем, затем в зависимости от значения, которое вернула эта функция, в  консоль выводится соответствющее сообщение. 		
 	\end{enumerate}
 	
 \subsection{Описание тестового стенда и методики тестирования}
 \hspace{\parindent}
+\todo[inline]{Вы же сами пишете, что используете Ubuntu, а MinGW -- это inimalist GNU for Windows -- нестыковочки...}
 Среда разработки QtCreator 3.5.0, компилятор Qt 5.5.0 MinGW 32bit, операционная система Ubuntu 14.04. Были проведены ручные, а также модульные тесты.
 
 \subsection{Тестовый план и результаты тестирования}
@@ -194,6 +209,7 @@ literate={Ö}{{\"O}}1
 \item[I тест]
 \hspace{\parindent}
 \begin{flushleft}
+\todo[inline]{здесь не понятно, чему соответствует 1000, а чему 20}
 \begin{description}
 \item[Входные данные:] 1000 20
 \item[Выходные данные:] 2488,32
@@ -243,21 +259,22 @@ literate={Ö}{{\"O}}1
 
 \subsection{Выводы}
 \hspace{\parindent}
+\todo[inline]{Следует использовать обезличенные конструкции (было отработано, получен опыт), или в третьем лице (автор отработал, автором был получен опыт)}
 При выполнении задания я отработала свои навыки в работе с основными конструкциями языка и получила опыт в организации функций одной программы.
 \subsection*{Листинги}
 \begin{itemize}
 \item[] \verb-bank.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/lib/bank.c}
+{../sources/SubDirrrProject/lib/bank.c}
 \item[] \verb-bank_console_ui.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/bank_console_ui.c}
+{../sources/SubDirrrProject/app/bank_console_ui.c}
 \item[] \verb-bank.h.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/lib/bank.h}
+{../sources/SubDirrrProject/lib/bank.h}
 \item[] \verb-bank_console_ui.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/bank_console_ui.h}
+{../sources/SubDirrrProject/app/bank_console_ui.h}
 \end{itemize}
 
 %\todo[inline]{Не забыть вставить все исходники}
@@ -272,7 +289,8 @@ literate={Ö}{{\"O}}1
 
 \subsection{Теоретические сведения}
 \hspace{\parindent}
-Для решения данной задачи необходимо знать, поместятся ли 2 дома на участке, и на каком участке. То есть если один дом не будет перекрывать другой, также находящийся на данной терртории, то программа выдаст положительный ответ. Иначе, если физически невозможно расположить 2 дома на однй территории, то программа выдаст отрицательный ответ. Мной была использована конструкция if...else. А также  функции библеотек stdio для ввода и вывода.
+Для решения данной задачи необходимо знать, поместятся ли 2 дома на участке, и на каком участке. То есть если один дом не будет перекрывать другой, также находящийся на данной терртории, то программа выдаст положительный ответ. Иначе, если физически невозможно
+ расположить 2 дома на однй территории, то программа выдаст отрицательный ответ. \todo[inline]{автором, или просто была}Мной была использована конструкция if...else. А также  функции библеотек stdio для ввода и вывода.
 
 \subsection{Проектирование}
 \hspace{\parindent}
@@ -351,16 +369,16 @@ literate={Ö}{{\"O}}1
 \begin{itemize}
 \item[] \verb-home.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/lib/home.c}
+{../sources/SubDirrrProject/lib/home.c}
 \item[] \verb-home_console_ui.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/home_console_ui.c}
+{../sources/SubDirrrProject/app/home_console_ui.c}
 \item[] \verb-home.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/lib/home.h}
+{../sources/SubDirrrProject/lib/home.h}
 \item[] \verb-home_console_ui.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/home_console_ui.h}
+{../sources/SubDirrrProject/app/home_console_ui.h}
 \end{itemize}
 %##################################################################################################################################################
 %
@@ -385,7 +403,7 @@ literate={Ö}{{\"O}}1
 \end{tabular}
 \end{center}	
 	
-\subsection{Теоритические сведения}
+\subsection{Теоретические сведения}
 \hspace{\parindent}
 Для того, чтобы перевести из сантиметров в дюймы необходимо количество сантиметров поделить на эквивалент, равный 2,54. Для того чтобы перевести из дюймов в сантиметры - соответственно умножить на 2,54.
 	Для выполнения задания использоваилсь функции библиотеки stdio для ввода и вывода.
@@ -470,16 +488,16 @@ literate={Ö}{{\"O}}1
 \begin{itemize}
 \item[] \verb-cm_to_inch.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/lib/cm_to_inch.c}
+{../sources/SubDirrrProject/lib/cm_to_inch.c}
 \item[] \verb-cm_to_inch_console_ui.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/cm_to_inch_console_ui.c}
+{../sources/SubDirrrProject/app/cm_to_inch_console_ui.c}
 \item[] \verb-cm_to_inch.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/lib/cm_to_inch.h}
+{../sources/SubDirrrProject/lib/cm_to_inch.h}
 \item[] \verb-cm_to_inch_console_ui.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/cm_to_inch_console_ui.h}
+{../sources/SubDirrrProject/app/cm_to_inch_console_ui.h}
 \end{itemize}
 
 %##################################################################################################################################################
@@ -489,9 +507,9 @@ literate={Ö}{{\"O}}1
 \section{Заполнение матрицы по спирали}
 \subsection{Задание}
 \hspace{\parindent}
-Матрицу A(m,n) заполнить натуральными числами от 1 до m*n по спирали, начинающейся в левом верхнем углу и закрученной по часовой стрелке.
+Матрицу $A(m,n)$ заполнить натуральными числами от 1 до $m \times n$ по спирали, начинающейся в левом верхнем углу и закрученной по часовой стрелке.
 
-\subsection{Теоритические сведения}
+\subsection{Теоретические сведения}
 \hspace{\parindent}
 Для выполнения задания использовался цикл for, конструкция if...else, а также функции бибилиотек stdlib для динамического выделения и освобождения памяти, stdio для ввода, вывода информации и работы с файлами.
 
@@ -545,8 +563,8 @@ literate={Ö}{{\"O}}1
 \end{description}
 \end{flushleft}
 \end{description}
-
-\item \textbf{Статический анализ \textit{cppcheck}}
+\todo[inline]{Только с этого задания начали использовать cppcheck? и версию не указываете...}
+\item \textbf{Статический анализ с использование утилиты \textit{cppcheck}}
 
 Утилита \textit{cppcheck} не выдала никаких предупреждений.
 \end{enumerate}
@@ -557,16 +575,16 @@ literate={Ö}{{\"O}}1
 \begin{itemize}
 \item[] \verb-matrix.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/lib/matrix.c}
+{../sources/SubDirrrProject/lib/matrix.c}
 \item[] \verb-matrix_console_ui.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/matrix_console_ui.c}
+{../sources/SubDirrrProject/app/matrix_console_ui.c}
 \item[] \verb-matrix.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/lib/matrix.h}
+{../sources/SubDirrrProject/lib/matrix.h}
 \item[] \verb-matrix_console_ui.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/matrix_console_ui.h}
+{../sources/SubDirrrProject/app/matrix_console_ui.h}
 \end{itemize}
 
 
@@ -663,16 +681,16 @@ literate={Ö}{{\"O}}1
 \begin{itemize}
 \item[] \verb-strings.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/lib/strings.c}
+{../sources/SubDirrrProject/lib/strings.c}
 \item[] \verb-strings_console_ui.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/strings_console_ui.c}
+{../sources/SubDirrrProject/app/strings_console_ui.c}
 \item[] \verb-strings.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/lib/matrix.h}
+{../sources/SubDirrrProject/lib/matrix.h}
 \item[] \verb-strings_console_ui.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/matrix_console_ui.h}
+{../sources/SubDirrrProject/app/matrix_console_ui.h}
 \end{itemize}
 %################################################################################################################
 %
@@ -684,10 +702,10 @@ literate={Ö}{{\"O}}1
 \begin{itemize}
 \item[] \verb-main.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/app/main.c}
+{../sources/SubDirrrProject/app/main.c}
 \item[] \verb-main.c-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/test/tst_testtest.cpp}
+{../sources/SubDirrrProject/test/tst_testtest.cpp}
 \end{itemize}
 %################################################################################################################
 %
@@ -698,7 +716,7 @@ literate={Ö}{{\"O}}1
 \subsection{Задание}
 \hspace{\parindent}
 Реализовать класс МНОЖЕСТВО (целых чисел). Требуемые методы: конструктор, деструктор, копирование, сложение множеств, пересечение множеств, добавление в множество, включение в множество.
-\subsection{Теоритические сведения}
+\subsection{Теоретические сведения}
 \hspace{\parindent}
 При разработке приложения была задействована объектная ориентированность языка C++. 
 
@@ -718,23 +736,24 @@ literate={Ö}{{\"O}}1
 \subsection{Выводы}
 \hspace{\parindent}
 Я познакомилася с языком С++. Познакомилася с новой парадигмой программирования - ООП.
+\todo[inline]{Ведь не со всех парадигмой, а только с инкапсуляцией}
 \subsection*{Листинги}
 \begin{itemize}
 \item[] \verb-main.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/set/main.cpp}
+{../sources/SubDirrrProject/set/main.cpp}
 \item[] \verb-node.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/set/node.cpp}
+{../sources/SubDirrrProject/set/node.cpp}
 \item[] \verb-set.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/set/set.cpp}
+{../sources/SubDirrrProject/set/set.cpp}
 \item[] \verb-node.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/set/node.h}
+{../sources/SubDirrrProject/set/node.h}
 \item[] \verb-set.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/set/set.h}
+{../sources/SubDirrrProject/set/set.h}
 \end{itemize}
 
 %################################################################################################################
@@ -754,87 +773,87 @@ literate={Ö}{{\"O}}1
 
 \item[] \verb-bankconsoleuicpp.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/appCPP/bankconsoleuicpp.cpp}
+{../sources/SubDirrrProject/appCPP/bankconsoleuicpp.cpp}
 
 \item[] \verb-bankconsoleuicpp.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/appCPP/bankconsoleuicpp.h}
+{../sources/SubDirrrProject/appCPP/bankconsoleuicpp.h}
 
 \item[] \verb-cmtoinchconsoleuicpp.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/appCPP/cmtoinchconsoleuicpp.cpp}
+{../sources/SubDirrrProject/appCPP/cmtoinchconsoleuicpp.cpp}
 
 \item[] \verb-cmtoinchconsoleuicpp.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/appCPP/cmtoinchconsoleuicpp.h}
+{../sources/SubDirrrProject/appCPP/cmtoinchconsoleuicpp.h}
 
 \item[] \verb-homeconsoleuicpp.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/appCPP/homeconsoleuicpp.cpp}
+{../sources/SubDirrrProject/appCPP/homeconsoleuicpp.cpp}
 
 \item[] \verb-homeconsoleuicpp.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/appCPP/homeconsoleuicpp.h}
+{../sources/SubDirrrProject/appCPP/homeconsoleuicpp.h}
 
 \item[] \verb-matrixconsoleuicpp.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/appCPP/matrixconsoleuicpp.cpp}
+{../sources/SubDirrrProject/appCPP/matrixconsoleuicpp.cpp}
 
 \item[] \verb-matrixconsoleuicpp.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/appCPP/matrixconsoleuicpp.h}
+{../sources/SubDirrrProject/appCPP/matrixconsoleuicpp.h}
 
 \item[] \verb-stringsconsoleuicpp.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/appCPP/stringsconsoleuicpp.cpp}
+{../sources/SubDirrrProject/appCPP/stringsconsoleuicpp.cpp}
 
 \item[] \verb-stringsconsoleuicpp.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/appCPP/stringsconsoleuicpp.h}
+{../sources/SubDirrrProject/appCPP/stringsconsoleuicpp.h}
 
 \item[] \verb-bankcpp.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/libCPP/bankcpp.cpp}
+{../sources/SubDirrrProject/libCPP/bankcpp.cpp}
 
 \item[] \verb-bankcpp.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/libCPP/bankcpp.h}
+{../sources/SubDirrrProject/libCPP/bankcpp.h}
 
 \item[] \verb-cmtoinchcpp.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/libCPP/cmtoinchcpp.cpp}
+{../sources/SubDirrrProject/libCPP/cmtoinchcpp.cpp}
 
 \item[] \verb-cmtoinchcpp.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/libCPP/cmtoinchcpp.h}
+{../sources/SubDirrrProject/libCPP/cmtoinchcpp.h}
 
 \item[] \verb-homecpp.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/libCPP/homecpp.cpp}
+{../sources/SubDirrrProject/libCPP/homecpp.cpp}
 
 \item[] \verb-homecpp.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/libCPP/homecpp.h}
+{../sources/SubDirrrProject/libCPP/homecpp.h}
 
 \item[] \verb-matrixcpp.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/libCPP/matrixcpp.cpp}
+{../sources/SubDirrrProject/libCPP/matrixcpp.cpp}
 
 \item[] \verb-matrixcpp.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/libCPP/matrixcpp.h}
+{../sources/SubDirrrProject/libCPP/matrixcpp.h}
 
 \item[] \verb-stringscpp.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/libCPP/stringscpp.cpp}
+{../sources/SubDirrrProject/libCPP/stringscpp.cpp}
 
 \item[] \verb-stringscpp.h-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/libCPP/stringscpp.h}
+{../sources/SubDirrrProject/libCPP/stringscpp.h}
 
 \item[] \verb-tst_testcpptest.cpp-
 \lstinputlisting[]
-{../ProgrammingCourse/sources/SubDirrrProject/testCPP/tst_testcpptest.cpp}
+{../sources/SubDirrrProject/testCPP/tst_testcpptest.cpp}
 
 \end{itemize}
 \end{document}
