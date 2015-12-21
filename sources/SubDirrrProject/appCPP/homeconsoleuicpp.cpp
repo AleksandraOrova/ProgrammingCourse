@@ -1,5 +1,5 @@
 #include "homeconsoleuicpp.h"
-#include "homecpp.h"
+#include "rectangle.h"
 #include <iostream>
 using namespace std;
 
@@ -14,15 +14,18 @@ void HomeConsoleUICPP::doWork()
     cout << "Homework #2: Input, output and cycles\n\n\n";
     cout << "Exercise #2 \n\n";
     cout << "Please, input length (horizontal)  of area a, b, p, q and r, s: \n";
-    cin >> length_horizontal_a;
-    cin >> length_vertical_a;
-    cin >> length_horizontal_h1;
-    cin >> length_vertical_h1;
-    cin >> length_horizontal_h2;
-    cin >> length_vertical_h2;
-    HomeCPP homeWorker(length_horizontal_a, length_vertical_a, length_horizontal_h1, length_vertical_h1, length_horizontal_h2, length_vertical_h2);
+    int tempW, tempH;
+    cin >> tempW;
+    cin >> tempH;
+    Rectangle Area(tempW, tempH);
+    cin >> tempW;
+    cin >> tempH;
+    Rectangle Rect1(tempW, tempH);
+    cin >> tempW;
+    cin >> tempH;
+    Rectangle Rect2(tempW, tempH);
 
-    if (homeWorker.doWork() == 1)
+    if (Area.canInsert(Rect1, Rect2))
         cout << "Yes\n";
     else
         cout << "No\n";

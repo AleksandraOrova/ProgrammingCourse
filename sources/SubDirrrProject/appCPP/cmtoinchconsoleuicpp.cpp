@@ -15,15 +15,15 @@ void CmToInchConsoleUICPP::doWork()
     cout << "Input cm";
     cin >> a;
     double i, temp, tempInch = 1;
-    CmToInchCPP cmToInchWorker;
+    //CmToInchCPP cmToInchWorker;
     for (i = 1; i<=a; i++)
     {
-        temp = cmToInchWorker.cm_to_inch(i);
+        temp = CmToInchCPP().cm_to_inch(i);
         if (temp < tempInch)
             cout << temp << "\t" << i << endl;
         else
         {
-            cout << tempInch << "\t" << cmToInchWorker.inch_to_cm(tempInch) << endl;
+            cout << tempInch << "\t" << CmToInchCPP().inch_to_cm(tempInch) << endl;
             i--;
             tempInch++;
         }

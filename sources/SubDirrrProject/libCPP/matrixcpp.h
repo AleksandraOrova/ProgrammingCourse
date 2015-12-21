@@ -1,18 +1,22 @@
 #ifndef MATRIXCPP_H
 #define MATRIXCPP_H
+#include <iostream>
+using namespace std;
 
-/// этот класс еще более бредовый по обоим критериям
-/// сделайте класс Матрицы со спиралью,
-/// в конструкторе она будет принимать параметры для своего размера, выделять память, заполнять себя спиралью
-/// в деструкторе освобождать память
-/// и будет перегруженный метод направления ее в выходной поток
-/// а также метод, который позволить получить значение элемента на позициях
 class MatrixCPP
 {
+private:
+    int** data;
+    int width;
+    int height;
+    void fillSpiralMatrix();
 public:
-    MatrixCPP();
-    int** initializeMatrix(int, int);
-    void fillSpiralMatrix(int**, int, int);
+    MatrixCPP(int, int);
+    ~MatrixCPP();
+    int getCell(int, int);
+    int getHeight();
+    int getWidth();
+    friend ostream& operator<<(ostream& os, MatrixCPP &matrix);
 };
 
 #endif // MATRIXCPP_H

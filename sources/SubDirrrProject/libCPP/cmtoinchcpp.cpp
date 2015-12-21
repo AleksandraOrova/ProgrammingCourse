@@ -1,10 +1,5 @@
 #include "cmtoinchcpp.h"
 
-CmToInchCPP::CmToInchCPP()
-{
-
-}
-
 double CmToInchCPP::cm_to_inch(double cm)
 {
     return (cm/2.54f);

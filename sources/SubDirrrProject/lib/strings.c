@@ -4,7 +4,6 @@
 
 char** initialize_text(int rows, int max){
     char** text;
-    /// то же самое, не надо выделять память, если в этой функции не освободите
     text = (char**) malloc(rows*sizeof(char*));
     int i;
     for (i = 0; i<rows; i++)
@@ -12,13 +11,10 @@ char** initialize_text(int rows, int max){
     return text;
 }
 
-/// Здесь только выделение памяти, инициализации, как обещано в названии, нет
 char* initialize_string(int max){
-    /// то же самое, не надо выделять память, если в этой функции не освободите
     return (char*) malloc(max*sizeof(char));
 }
 
-///
 void input_text(char** text, int rows, int max){
     int i;
     //getchar();//считываем предыдущий enter
@@ -32,7 +28,6 @@ void print_text(char** text, int rows){
         printf("%s\n", text[i]);
 }
 
-/// чем не угодила strlen из стандартной библиотеки?
 int get_length(char* string){
     int len = 0;
     while(*string++!=0) len++;
@@ -78,6 +73,7 @@ char* insert_chars(char* str, int place, char chr, int count){
 }
 
 /// что делает в библиотеке консольный ввод?
+/// A: Я понимаю, что легче бы было сделать toString, но что за код без костылей?..
 void get_string(char *str, int max){
     int i = 0, ch;
     while((ch = getchar()) != '\n')

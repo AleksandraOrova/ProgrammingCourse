@@ -16,15 +16,11 @@ void matrix_console_UI(char* input_file_name, char* output_file_name){
     scanf("%d", &m);
     fscanf(in, "%i", &k);
 
-    /// Выделять и освобождать память следует на одном уровне абстракции,
-    /// то есть нужно  в одно функции выделить и освободить память
-    int** array = initializeMatrix(n, m);
+    int** array = (int **)malloc(n*sizeof(int*));
 
-    /// Зачем это дублирование, вроде уже выделили в вашем  initialize (хоть это и плохо)
     for (i = 0; i < n; ++i)
         array[i] = (int*) malloc(n * sizeof(int));
 
-    /// Вот лучше бы это выделили в функцию, если хочется, а выделение памяти вернули
     for (i = 0; i < n; ++i)
         for (j = 0; j < n; ++j)
             fscanf(in, "%i\n", &array[i][j]);
@@ -34,7 +30,6 @@ void matrix_console_UI(char* input_file_name, char* output_file_name){
     fillSpiralMatrix(array, n, m);
     printMatrix(array, n, m);
 
-    /// Вот лучше бы это выделили в функцию, если хочется, а выделение памяти вернули
     for (i = 0; i < n; ++i)
     {
         for (j = 0; j < n; ++j)

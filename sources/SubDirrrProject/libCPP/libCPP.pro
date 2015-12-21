@@ -13,16 +13,16 @@ CONFIG += staticlib
 SOURCES += \
     bankcpp.cpp \
     cmtoinchcpp.cpp \
-    homecpp.cpp \
     matrixcpp.cpp \
-    stringscpp.cpp
+    stringscpp.cpp \
+    rectangle.cpp
 
 HEADERS += \
     bankcpp.h \
     cmtoinchcpp.h \
-    homecpp.h \
     matrixcpp.h \
-    stringscpp.h
+    stringscpp.h \
+    rectangle.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

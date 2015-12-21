@@ -1,11 +1,16 @@
 #ifndef HOME_H
 #define HOME_H
 
+typedef struct{
+    int width;
+    int height;
+}Size;
+
 #ifdef __cplusplus
 extern "C"{
 #endif
 
-    int home(int, int, int, int, int, int);
+    int home(Size, Size, Size);
 
 #ifdef __cplusplus
 }

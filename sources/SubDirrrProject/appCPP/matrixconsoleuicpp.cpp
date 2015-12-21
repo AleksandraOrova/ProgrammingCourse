@@ -2,6 +2,7 @@
 #include "matrixcpp.h"
 #include <stdio.h>
 #include <iostream>
+#include <fstream>
 using namespace std;
 //MatrixConsoleUICPP matrixWorker; matrixWorker.doWork();
 MatrixConsoleUICPP::MatrixConsoleUICPP()
@@ -9,50 +10,28 @@ MatrixConsoleUICPP::MatrixConsoleUICPP()
 
 }
 
-void MatrixConsoleUICPP::doWork(char* input_file_name, char* output_file_name){
-/// Почему не файловые потоки, раз уж затеяли ввод-вывод
-    FILE* in;
-    FILE* out;
-    in = fopen(input_file_name, "r");
-    out = fopen(output_file_name, "w");
-    int m, n, i, j, k;
-
-    cout << "input n";
-    cin >> n;
-    cout << "input m";
-    cin >> m;
-    fscanf(in, "%i", &k);
-
-    MatrixCPP matrixWorker;
-
-    int** array = matrixWorker.initializeMatrix(n, m);
-
-    for (i = 0; i < n; ++i)
-        for (j = 0; j < n; ++j)
-            fscanf(in, "%i\n", &array[i][j]);
-
-    matrixWorker.fillSpiralMatrix(array, n, m);
-    printMatrix(array, n, m);
-
-    for (i = 0; i < n; ++i)
-    {
-        for (j = 0; j < n; ++j)
-            fprintf(out, "%i ", array[i][j]);
-        fprintf(out, "\n");
-    }
-
-    for (i = 0; i < n; ++i)
-        delete array[i];
-    delete array;
-    fclose(in);
-    fclose(out);;
-}
-
-void MatrixConsoleUICPP::printMatrix(int** array, int n, int m){
+void MatrixConsoleUICPP::printMatrix(MatrixCPP matrix){
     int i, j;
-    for (i = 0; i<n; i++){
-        for(j = 0; j<m; j++)
-            cout << array[i][j] << " ";
+    for (i = 0; i<matrix.getHeight(); i++){
+        for(j = 0; j<matrix.getWidth(); j++)
+            cout << matrix.getCell(i, j) << " ";
         cout << endl;
     }
+}
+
+void MatrixConsoleUICPP::doWork(char* input_file_name, char* output_file_name){
+    ifstream in(input_file_name);
+    ofstream out(output_file_name);
+    int m, n;
+
+    in >> n;
+    in >> m;
+
+    MatrixCPP matrix(n, m);
+
+    cout << matrix;
+    out << matrix;
+
+    in.close();
+    out.close();
 }

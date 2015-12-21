@@ -4,9 +4,9 @@
 ///
 /// И вы уже знаете, что эта функция просто делает рассчет сложного процента,
 /// так и назовите ее
-float bank(float summa, float percent)
+double bank(double summa, double percent)
 {
-    float result = summa;
+    double result = summa;
     int i;
     for (i = 0; i < 5; i++)
         result *= (100 + percent) / 100;

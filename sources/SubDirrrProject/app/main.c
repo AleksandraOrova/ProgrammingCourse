@@ -21,8 +21,6 @@ int strEquals(char* str1, char* str2)
     for(i = 0; str1[i] != '\0' && str2[i] != '\0'; i++)
         if (str1[i]!=str2[i])
             res++;
-    //printf("\t\tS1%s\n", str1);
-    //printf("\t\tS2%s\n", str2);
     return(res>0 ? 0 : 1);
 }
 

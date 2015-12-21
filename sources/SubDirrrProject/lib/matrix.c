@@ -1,6 +1,5 @@
 #include <stdlib.h>
 
-/// Не надо тут выделять память, если тут же не собраетесь освобождать
 int** initializeMatrix(int n, int m){
     int **array, i;
     array=(int **)malloc(n*sizeof(int*));

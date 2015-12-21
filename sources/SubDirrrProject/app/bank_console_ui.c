@@ -4,8 +4,7 @@
 
 void bank_Console_UI()
 {
-    /// Да почему же float, а не double, float на несколько байтом меньше double, но на порядки менее точный
-    float summa, percent;
+    double summa, percent;
     printf(" Homework #1: Input, output and cycles\n\n");
     printf("\n");
     printf("  Exercise #1 \n\n");

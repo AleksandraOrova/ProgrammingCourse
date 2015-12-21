@@ -8,7 +8,7 @@ extern "C"{
 #endif
 
 
-float bank(float , float);
+double bank(double , double);
 
 
 #ifdef __cplusplus

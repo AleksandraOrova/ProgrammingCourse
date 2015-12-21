@@ -1,12 +1,6 @@
 #include "bankcpp.h"
 
-BankCPP::BankCPP(float summa, float percent)
-{
-    this->summa = summa;
-    this->percent = percent;
-}
-
-float BankCPP::doWork()
+float BankCPP::doWork(float summa, float percent)
 {
     float result = summa;
     int i;
