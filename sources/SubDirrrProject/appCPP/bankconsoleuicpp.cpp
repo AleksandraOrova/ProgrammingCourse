@@ -1,5 +1,6 @@
 #include "bankconsoleuicpp.h"
 #include "bankcpp.h"
+#include "exception.h"
 #include <iostream>
 using namespace std;
 
@@ -18,5 +19,16 @@ void BankConsoleUICPP::doWork()
     cout << "    Please, input what is the percent at Your bank:" << endl;
     cin >> percent;
     //BankCPP bankWorker(summa, percent);
-    cout << "After 5 years You will have " << (BankCPP().compoundInterest(summa, percent)) << "rubbles" << endl;
+    try{
+        cout << "After 5 years You will have " << (BankCPP().compoundInterest(summa, percent)) << "rubbles" << endl;
+    }
+    catch(UnderNullException& exp){
+        cout << "Summa under Null. Current size: " << exp.GetSumma()
+             << endl;
+    }
+
+    catch(MoreThanHundred& exp){
+        cout << "Percent is more than hundred. Current size: " << exp.GetPercent()
+             << endl;
+    }
 }

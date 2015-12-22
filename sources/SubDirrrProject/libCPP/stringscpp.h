@@ -1,8 +1,6 @@
 #ifndef STRINGSCPP_H
 #define STRINGSCPP_H
 
-/// разбираться не будем, но похоже, можно все методы сделать static
-/// Производит впечатление бредового класса
 class StringsCPP
 {
 public:

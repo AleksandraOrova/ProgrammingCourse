@@ -73,7 +73,6 @@ char* insert_chars(char* str, int place, char chr, int count){
 }
 
 /// что делает в библиотеке консольный ввод?
-/// A: Я понимаю, что легче бы было сделать toString, но что за код без костылей?..
 void get_string(char *str, int max){
     int i = 0, ch;
     while((ch = getchar()) != '\n')

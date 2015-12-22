@@ -10,7 +10,6 @@ HomeConsoleUICPP::HomeConsoleUICPP()
 
 void HomeConsoleUICPP::doWork()
 {
-    float length_horizontal_a, length_vertical_a, length_horizontal_h1, length_vertical_h1, length_horizontal_h2, length_vertical_h2;
     cout << "Homework #2: Input, output and cycles\n\n\n";
     cout << "Exercise #2 \n\n";
     cout << "Please, input length (horizontal)  of area a, b, p, q and r, s: \n";

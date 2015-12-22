@@ -22,7 +22,8 @@ HEADERS += \
     cmtoinchcpp.h \
     matrixcpp.h \
     stringscpp.h \
-    rectangle.h
+    rectangle.h \
+    exception.h
 unix {
     target.path = /usr/lib
     INSTALLS += target
