@@ -18,5 +18,5 @@ void BankConsoleUICPP::doWork()
     cout << "    Please, input what is the percent at Your bank:" << endl;
     cin >> percent;
     //BankCPP bankWorker(summa, percent);
-    cout << "After 5 years You will have " << (BankCPP().doWork(summa, percent)) << "rubbles" << endl;
+    cout << "After 5 years You will have " << (BankCPP().compoundInterest(summa, percent)) << "rubbles" << endl;
 }
