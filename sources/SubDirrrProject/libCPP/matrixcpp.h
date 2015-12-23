@@ -3,6 +3,8 @@
 #include <iostream>
 using namespace std;
 
+
+/// где консты?
 class MatrixCPP
 {
 private:

@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 
+/// Зачем пустой конструктор
 BankConsoleUICPP::BankConsoleUICPP()
 {
 

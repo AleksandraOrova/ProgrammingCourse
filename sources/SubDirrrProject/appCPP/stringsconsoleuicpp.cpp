@@ -2,6 +2,8 @@
 #include"stringscpp.h"
 #define N 255
 
+
+/// Зачем пустой конструктор
 StringsConsoleUICPP::StringsConsoleUICPP()
 {
 

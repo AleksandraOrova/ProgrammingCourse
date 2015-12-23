@@ -1,6 +1,7 @@
 #include "rectangle.h"
 #include "exception.h"
 
+/// Добавить список инициализации
 Rectangle::Rectangle(const double width, const  double height){
     this->height = height;
     this->width = width;

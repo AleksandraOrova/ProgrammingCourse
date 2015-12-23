@@ -1,10 +1,13 @@
 #include "matrixcpp.h"
 #include <stdlib.h>
 
+/// Добавить список инициализации
 MatrixCPP::MatrixCPP(int height, int width)
 {
     this->width = width;
     this->height = height;
+
+    /// тут бы можно и вектор использовать
     data=(int **)malloc(height*sizeof(int*));
     for (int i = 0; i<height; i++)
             data[i]=(int*)malloc(width*sizeof(int));
@@ -13,8 +16,9 @@ MatrixCPP::MatrixCPP(int height, int width)
 
 MatrixCPP::~MatrixCPP(){
     for(int i = 0; i < height; i++)
-        delete data[i];
-    delete data;
+        /// delete[] должно быть
+        delete[] data[i];
+    delete[] data;
 }
 
 void MatrixCPP::fillSpiralMatrix(){

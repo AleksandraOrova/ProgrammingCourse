@@ -2,6 +2,8 @@
 #ifndef STRINGSCPP_H
 #define STRINGSCPP_H
 #include <string>
+
+/// где консты?
 using namespace std;
 class StringsCPP
 {

@@ -26,6 +26,7 @@ TestCPPTest::TestCPPTest(){
 
 }
 
+/// Это зачем???
 void TestCPPTest::testCase1(){
     QVERIFY2(true, "Failure");
 }
@@ -63,7 +64,15 @@ void TestCPPTest::cm2inch_test(){
 }
 
 void TestCPPTest::matrix_test(){
-    int res[7][5];
+    int res[7][5] {{ 1, 2,   3,  4, 5 },
+                  { 20, 21, 22, 23, 6 },
+                  { 19, 32, 33, 24, 7 },
+                  {  0,  0,  0,  0, 0 },
+                  {  0,  0,  0,  0, 0 },
+                  {  0,  0,  0,  0, 0 },
+                  {  0,  0,  0,  0, 0 },
+                  };
+
 
     res[0][0] = 1;   res[0][1] = 2;   res[0][2] = 3;   res[0][3] = 4;   res[0][4] = 5;
     res[0][0] = 20;  res[0][1] = 21;  res[0][2] = 22;  res[0][3] = 23;  res[0][4] = 6;

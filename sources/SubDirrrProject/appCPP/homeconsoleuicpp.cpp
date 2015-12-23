@@ -4,6 +4,7 @@
 #include "exception.h"
 using namespace std;
 
+/// Зачем пустой конструктор
 HomeConsoleUICPP::HomeConsoleUICPP()
 {
 

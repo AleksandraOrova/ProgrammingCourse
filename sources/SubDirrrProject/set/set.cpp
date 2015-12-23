@@ -17,6 +17,7 @@ Set::~Set()
     }
 }
 
+/// Нужен конструктор копирования
 Set Set::copy(Set source)
 {
     Node *temp = source.root;

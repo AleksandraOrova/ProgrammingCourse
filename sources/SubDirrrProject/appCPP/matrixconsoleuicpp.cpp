@@ -5,6 +5,9 @@
 #include <fstream>
 using namespace std;
 //MatrixConsoleUICPP matrixWorker; matrixWorker.doWork();
+
+
+/// Зачем пустой конструктор
 MatrixConsoleUICPP::MatrixConsoleUICPP()
 {
 

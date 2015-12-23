@@ -4,6 +4,8 @@
 #include <iostream>
 using namespace std;
 
+
+/// Зачем пустой конструктор
 CmToInchConsoleUICPP::CmToInchConsoleUICPP()
 {
 
