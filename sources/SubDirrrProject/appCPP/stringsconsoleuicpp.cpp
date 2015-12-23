@@ -8,11 +8,14 @@ StringsConsoleUICPP::StringsConsoleUICPP()
 }
 
 void StringsConsoleUICPP::doWork(){
-    int rows = 5;
-    StringsCPP stringsWorker;
-    char** text = stringsWorker.initialize_text(rows, N);
-    stringsWorker.input_text(text, rows, N);
-    stringsWorker.print_text(text, rows);
-    stringsWorker.spread_text(text, rows);
-    stringsWorker.print_text(text, rows);
+    int n;
+    cout << "Input number of lines ";
+    cin >> n;
+    cout << "Input text\n";
+    string* text = new string[n];
+    for (int i = 0 ; i< n ; i++)
+        cin >> text[i];
+    StringsCPP().spread_text(text, n);
+    for (int i = 0; i< n; i++)
+        cout << text[i];
 }

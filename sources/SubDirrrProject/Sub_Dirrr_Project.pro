@@ -2,7 +2,6 @@ TEMPLATE = subdirs
 
 app.depends = lib
 test.depends = lib
-
 appCPP.depends = libCPP
 
 SUBDIRS += \

@@ -8,7 +8,7 @@ extern "C"{
 #endif
 
 
-double bank(double , double);
+double compoundInterest(double , double, int);
 
 
 #ifdef __cplusplus

@@ -2,8 +2,8 @@
 #define HOME_H
 
 typedef struct{
-    int width;
-    int height;
+    double width;
+    double height;
 }Size;
 
 #ifdef __cplusplus

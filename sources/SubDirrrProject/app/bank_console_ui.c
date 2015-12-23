@@ -13,5 +13,5 @@ void bank_Console_UI()
     printf("    Please, input what is the percent at Your bank: \n\t");
     scanf("%f", &percent);
 
-    printf("After 5 years You will have %f rubbles.\n\n", bank(summa, percent));
+    printf("After 5 years You will have %f rubbles.\n\n", compoundInterest(summa, percent, 5));
 }

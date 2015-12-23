@@ -4,18 +4,18 @@
 #include "node.h"
 
 /// Остальные классы у вас называются с большой буквы
-class set
+class Set
 {
 public:
 
-    set();
-    ~set();
+    Set();
+    ~Set();
     void add(int);
-    void add(set);
+    void add(Set);
     bool contains(int);
-    bool contains(set);
-    set copy(set);
-    set intersect(set s);
+    bool contains(Set);
+    Set copy(Set);
+    Set intersect(Set s);
     int count();
     bool isEmpty();
 

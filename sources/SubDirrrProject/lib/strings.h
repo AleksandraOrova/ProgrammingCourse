@@ -5,12 +5,6 @@
 extern "C"{
 #endif
 
-void get_string(char*, int);
-char** initialize_text(int, int);
-char* initialize_string(int);
-void input_text(char**, int, int);
-void print_text(char**, int);
-int get_length(char*);
 int get_max_string_length(char**, int);
 int count_spaces(char*);
 char* insert_char(char*, int, char);

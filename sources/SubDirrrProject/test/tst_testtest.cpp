@@ -32,8 +32,8 @@ void TestTest::testCase1(){
 }
 
 void TestTest::bank_test(){
-    QCOMPARE(bank(200, 25), 610.35f);
-    QCOMPARE(bank(10, 90), 247.60f);
+    QCOMPARE(compoundInterest(200, 25, 5), 610.35f);
+    QCOMPARE(compoundInterest(10, 90, 5), 247.60f);
 }
 
 void TestTest::home_test_1(){
@@ -71,7 +71,11 @@ void TestTest::cm2inch_test(){
 }
 
 void TestTest::matrix_test(){
-    int** res = initializeMatrix(5, 7);
+    int i, j;
+    int** res = (int **)malloc(7*sizeof(int*));
+
+    for (i = 0; i < 7; ++i)
+        res[i] = (int*) malloc(5 * sizeof(int));
     res[0][0] = 1;   res[0][1] = 2;   res[0][2] = 3;   res[0][3] = 4;   res[0][4] = 5;
     res[0][0] = 20;  res[0][1] = 21;  res[0][2] = 22;  res[0][3] = 23;  res[0][4] = 6;
     res[0][0] = 19;  res[0][1] = 32;  res[0][2] = 33;  res[0][3] = 24;  res[0][4] = 7;
@@ -80,34 +84,65 @@ void TestTest::matrix_test(){
     res[0][0] = 16;  res[0][1] = 29;  res[0][2] = 28;  res[0][3] = 27;  res[0][4] = 10;
     res[0][0] = 15;  res[0][1] = 14;  res[0][2] = 13;  res[0][3] = 12;  res[0][4] = 11;
 
-    int** tmp = initializeMatrix(2, 3);
+    int** tmp = (int **)malloc(7*sizeof(int*));
+
+    for (i = 0; i < 7; ++i)
+        tmp[i] = (int*) malloc(5 * sizeof(int));
     fillSpiralMatrix(tmp, 5, 7);
 
-    for (int i = 0; i < 5; ++i)
+    for (i = 0; i < 5; ++i)
     {
-        for(int j = 0; j < 7; j++)
+        for(j = 0; j < 7; j++)
         {
             QCOMPARE(tmp[i][j], res[i][j]);
         }
     }
 
+    for(i = 0; i < 7; i++){
+        free(tmp[i]);
+        free(res[i]);
+    }
+    free(tmp);
+    free(res);
+
 }
 
 void TestTest::strings_test(){
-    char** resText = initialize_text(5, 255);
+
+    int i, j;
+    char** tmpText = (char**) malloc(5*sizeof(char*));
+    for (i = 0; i<5; i++)
+        tmpText[i] = (char*) malloc(255*sizeof(char));
+    tmpText[0] = "banana banana";
+    tmpText[1] = "ban na ba na";
+    tmpText[2] = "b an ba na";
+    tmpText[3] = "b nab na";
+    tmpText[4] = "banana";
+
+    char** resText = (char**) malloc(5*sizeof(char*));
+    for (i = 0; i<5; i++)
+        resText[i] = (char*) malloc(255*sizeof(char));
     resText[0] = "banana banana";
     resText[1] = "ban na ba  na";
     resText[2] = "b  an  ba  na";
     resText[3] = "b   nab    na";
     resText[4] = "       banana";
-    char** tmpText = initialize_text(5, 255);
-    for (int i = 0; i < 5; ++i)
+    spread_text(tmpText, 5);
+    for (i = 0; i < 5; ++i)
     {
-        for(int j = 0; j < 255; j++)
+        for(j = 0; j < 255; j++)
         {
             QCOMPARE(tmpText[i][j], resText[i][j]);
         }
     }
+
+
+    for (i = 0; i<5; i++){
+        free(resText[i]);
+        free(tmpText[i]);
+    }
+    free (resText);
+    free (tmpText);
 
 }
 

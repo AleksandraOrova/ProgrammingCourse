@@ -1,104 +1,104 @@
 #include "set.h"
 #include "node.h"
 
-set::set()
+Set::Set()
 {
     root = nullptr;
 }
 
-set::~set()
+Set::~Set()
 {
     Node *temp;
     while(root != nullptr)
     {
         temp = root;
-        root = root->next;
+        root = root->getNext();
         temp->~Node();
     }
 }
 
-set set::copy(set source)
+Set Set::copy(Set source)
 {
     Node *temp = source.root;
-    set *result = new set();
+    Set *result = new Set();
     while(temp!=nullptr){
-        result->addToBeg(temp->data);
-        temp = temp->next;
+        result->addToBeg(temp->getData());
+        temp = temp->getNext();
     }
     return *result;
 }
 
-void set::addToBeg(int data)
+void Set::addToBeg(int data)
 {
     root = new Node(data, root);
 }
 
-Node* set::searchByKey(int data)
+Node* Set::searchByKey(int data)
 {
     Node *temp=root;
-    while(temp!=nullptr && temp->data!=data)
-        temp = temp->next;
+    while(temp!=nullptr && temp->getData()!=data)
+        temp = temp->getNext();
     return temp;
 }
 
-void set::add(int data)
+void Set::add(int data)
 {
     if (searchByKey(data)!=nullptr)
         return;
     addToBeg(data);
 }
 
-void set::add(set added)
+void Set::add(Set added)
 {
     Node *temp = added.root;
     while(temp!=nullptr){
-        add(temp->data);
-        temp = temp->next;
+        add(temp->getData());
+        temp = temp->getNext();
     }
 }
 
-bool set::contains(set s)
+bool Set::contains(Set s)
 {
     Node *temp = s.root;
     bool result = true;
     while(temp!=nullptr){
-        result = result && contains(temp->data);
-        temp = temp->next;
+        result = result && contains(temp->getData());
+        temp = temp->getNext();
     }
     return result;
 }
 
-bool set::contains(int data)
+bool Set::contains(int data)
 {
     return (searchByKey(data)!=nullptr);
 }
 
-set set::intersect(set s)
+Set Set::intersect(Set s)
 {
-    set *result = new set();
+    Set *result = new Set();
     Node *temp = root;
     while(temp!=nullptr)
     {
-        if (s.contains(temp->data))
-            result->add(temp->data);
-        temp = temp->next;
+        if (s.contains(temp->getData()))
+            result->add(temp->getData());
+        temp = temp->getNext();
     }
     return *result;
 }
 
-int set::count()
+int Set::count()
 {
     Node *temp = root;
     int result = 0;
     while(temp!=nullptr)
     {
         result++;
-        temp = temp->next;
+        temp = temp->getNext();
     }
     return result;
 }
 
-bool set::isEmpty()
+bool Set::isEmpty()
 {
     return (count()<=0);
 }

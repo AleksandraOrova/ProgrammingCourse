@@ -1,10 +1,10 @@
 #include"bank.h"
 
-double bank(double summa, double percent)
+double compoundInterest(double summa, double percent, int n)
 {
     double result = summa;
     int i;
-    for (i = 0; i < 5; i++)
+    for (i = 0; i < n; i++)
         result *= (100 + percent) / 100;
     return result;
 }

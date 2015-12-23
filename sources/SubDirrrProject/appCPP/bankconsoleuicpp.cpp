@@ -11,7 +11,7 @@ BankConsoleUICPP::BankConsoleUICPP()
 
 void BankConsoleUICPP::doWork()
 {
-    float summa, percent;
+    double summa, percent;
     cout << "\tHomework #1: Input, output and cycles" << endl;
     cout << "Exercise #1" << endl << endl;
     cout << "Please, input how much money You want to put to the bank:" << endl;
@@ -22,8 +22,8 @@ void BankConsoleUICPP::doWork()
     try{
         cout << "After 5 years You will have " << (BankCPP().compoundInterest(summa, percent)) << "rubbles" << endl;
     }
-    catch(UnderNullException& exp){
-        cout << "Summa under Null. Current size: " << exp.GetSumma()
+    catch(UnderNullExceptionSumma& exp){
+        cout << "Summa is under Null. Current size: " << exp.GetSumma()
              << endl;
     }
 

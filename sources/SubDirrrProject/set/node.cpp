@@ -10,3 +10,19 @@ Node::Node(int d){
 }
 Node::~Node(){
 }
+
+void Node::setData(int data){
+    this->data = data;
+}
+
+void Node::setNext(Node* next){
+    this->next = next;
+}
+
+int Node::getData(){
+    return data;
+}
+
+Node* Node::getNext(){
+    return next;
+}

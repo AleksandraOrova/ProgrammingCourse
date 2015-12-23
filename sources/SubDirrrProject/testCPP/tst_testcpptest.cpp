@@ -63,9 +63,7 @@ void TestCPPTest::cm2inch_test(){
 }
 
 void TestCPPTest::matrix_test(){
-    int** res = (int **)malloc(7*sizeof(int*));
-    for (int i = 0; i<7; i++)
-            res[i]=(int*)malloc(5*sizeof(int));
+    int res[7][5];
 
     res[0][0] = 1;   res[0][1] = 2;   res[0][2] = 3;   res[0][3] = 4;   res[0][4] = 5;
     res[0][0] = 20;  res[0][1] = 21;  res[0][2] = 22;  res[0][3] = 23;  res[0][4] = 6;
@@ -84,35 +82,31 @@ void TestCPPTest::matrix_test(){
         }
     }
 
-    for(int i = 0; i < 7; i++)
-        delete res[i];
-    delete res;
-
 }
 
 void TestCPPTest::strings_test(){
-    string resText[5];
-
-    resText[0] = "banana banana";
-    resText[1] = "ban na ba  na";
-    resText[2] = "b  an  ba  na";
-    resText[3] = "b   nab    na";
-    resText[4] = "       banana";
-    char** tmpText = (StringsCPP()).initialize_text(5, 255);
+    string tmpText[5];
     tmpText[0] = "banana banana";
     tmpText[1] = "ban na ba na";
     tmpText[2] = "b an ba na";
     tmpText[3] = "b nab na";
     tmpText[4] = "banana";
     (StringsCPP()).spread_text(tmpText, 5);
+
+    string resText[5];
+    resText[0] = "banana banana";
+    resText[1] = "ban na ba  na";
+    resText[2] = "b  an  ba  na";
+    resText[3] = "b   nab    na";
+    resText[4] = "       banana";
+
     for (int i = 0; i < 5; ++i)
     {
-        for(int j = 0; j < strlen(tmpText[i]); j++)
+        for(int j = 0; j < tmpText[i].length(); j++)
         {
             QCOMPARE(tmpText[i][j], resText[i][j]);
         }
     }
-
 }
 
 QTEST_APPLESS_MAIN(TestCPPTest)

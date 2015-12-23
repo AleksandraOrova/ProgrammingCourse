@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 #include"home.h"
 #include"home_console_ui.h"
@@ -10,12 +9,12 @@ void home_Console_UI()
     printf("Exercise #2 \n\n");
     printf("Please, input length (horizontal)  of area a, b, p, q and r, s: \n");
     Size home1, home2, area;
-    scanf("%f", &area.width);
-    scanf("%f", &area.height);
-    scanf("%f", &home1.width);
-    scanf("%f", &home1.height);
-    scanf("%f", &home2.width);
-    scanf("%f", &home2.height);
+    scanf("%lf", &area.width);
+    scanf("%lf", &area.height);
+    scanf("%lf", &home1.width);
+    scanf("%lf", &home1.height);
+    scanf("%lf", &home2.width);
+    scanf("%lf", &home2.height);
 
     if (home(area, home1, home2) == 1)
         printf("Yes\n");

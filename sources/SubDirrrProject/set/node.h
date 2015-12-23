@@ -4,13 +4,17 @@
 
 class Node
 {
-public:
-    /// И они у вас в public доступе, кто угодно может поменять в любой момент
+private:
     int data;
     Node* next;
+public:
     Node(int);
     Node(int, Node*);
     ~Node();
+    void setData(int data);
+    void setNext(Node* next);
+    int getData();
+    Node* getNext();
 };
 
 #endif // NODE_H

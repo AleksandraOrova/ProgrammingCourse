@@ -11,9 +11,9 @@ private:
     int height;
     void fillSpiralMatrix();
 public:
-    MatrixCPP(int, int);
+    MatrixCPP(int height, int width);
     ~MatrixCPP();
-    int getCell(int, int);
+    int getCell(int y, int x);
     int getHeight();
     int getWidth();
     friend ostream& operator<<(ostream& os, MatrixCPP &matrix);

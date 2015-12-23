@@ -1,13 +1,5 @@
 #include <stdlib.h>
 
-int** initializeMatrix(int n, int m){
-    int **array, i;
-    array=(int **)malloc(n*sizeof(int*));
-    for (i = 0; i<n; i++)
-            array[i]=(int*)malloc(m*sizeof(int));
-    return array;
-}
-
 void fillSpiralMatrix(int** array, int n, int m){
     int j, rows = 0, cols = 0, k = 1;
     int horbeg = 0, horend = m-1, vertbeg = 0, vertend = n-1;

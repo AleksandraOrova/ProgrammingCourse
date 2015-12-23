@@ -5,7 +5,6 @@
 extern "C"{
 #endif
 
-int** initializeMatrix(int, int);
 void fillSpiralMatrix(int**, int, int);
 
 

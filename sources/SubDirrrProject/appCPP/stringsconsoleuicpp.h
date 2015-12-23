@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 #ifndef STRINGSCONSOLEUICPP_H
 #define STRINGSCONSOLEUICPP_H
 

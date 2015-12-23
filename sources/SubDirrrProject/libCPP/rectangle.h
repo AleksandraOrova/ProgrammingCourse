@@ -3,14 +3,14 @@
 
 class Rectangle{
 private:
-    int width;
-    int height;
+    double width;
+    double height;
 public:
-    Rectangle(int, int);
+    Rectangle(const double width, const  double height);
     int getWidth();
-    void setWidth(int);
+    void setWidth(const double width);
     int getHeight();
-    void setHeight(int);
+    void setHeight(const double height);
     bool canInsert(Rectangle, Rectangle);
 };
 

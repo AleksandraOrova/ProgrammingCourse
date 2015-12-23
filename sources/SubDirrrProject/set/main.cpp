@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    set *s1 = new set();
-    set *s2 = new set();
+    Set *s1 = new Set();
+    Set *s2 = new Set();
     s1->add(5);
     s1->add(2);
     s1->add(7);

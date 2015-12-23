@@ -4,7 +4,7 @@
 class BankCPP
 {
 public:
-    static float compoundInterest(float, float);
+    static double compoundInterest(double, double);
 };
 
 #endif // BANKCPP_H
