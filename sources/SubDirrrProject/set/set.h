@@ -3,7 +3,6 @@
 #include <iostream>
 #include "node.h"
 
-/// Остальные классы у вас называются с большой буквы
 class Set
 {
 public:
