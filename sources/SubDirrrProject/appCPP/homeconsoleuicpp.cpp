@@ -4,6 +4,15 @@
 #include "exception.h"
 using namespace std;
 
+<<<<<<< HEAD
+=======
+/// Зачем пустой конструктор
+HomeConsoleUICPP::HomeConsoleUICPP()
+{
+
+}
+
+>>>>>>> 745ff464e96b4d4520f39862ad444ec10491c09c
 void HomeConsoleUICPP::doWork()
 {
     cout << "Homework #2: Input, output and cycles\n\n\n";

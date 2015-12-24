@@ -4,6 +4,17 @@
 #include <iostream>
 using namespace std;
 
+<<<<<<< HEAD
+=======
+
+/// Зачем пустой конструктор
+CmToInchConsoleUICPP::CmToInchConsoleUICPP()
+{
+
+}
+
+
+>>>>>>> 745ff464e96b4d4520f39862ad444ec10491c09c
 void CmToInchConsoleUICPP::doWork()
 {
     int a;
