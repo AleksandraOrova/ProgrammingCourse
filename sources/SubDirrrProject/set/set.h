@@ -9,6 +9,7 @@ class Set
 public:
 
     Set();
+    Set(const Set& source);
     ~Set();
     void add(int);
     void add(Set);

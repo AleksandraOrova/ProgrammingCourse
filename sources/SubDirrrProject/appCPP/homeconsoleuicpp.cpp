@@ -4,11 +4,6 @@
 #include "exception.h"
 using namespace std;
 
-HomeConsoleUICPP::HomeConsoleUICPP()
-{
-
-}
-
 void HomeConsoleUICPP::doWork()
 {
     cout << "Homework #2: Input, output and cycles\n\n\n";

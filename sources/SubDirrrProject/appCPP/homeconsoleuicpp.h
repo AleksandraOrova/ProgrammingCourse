@@ -5,7 +5,6 @@
 class HomeConsoleUICPP
 {
 public:
-    HomeConsoleUICPP();
     void doWork();
 };
 

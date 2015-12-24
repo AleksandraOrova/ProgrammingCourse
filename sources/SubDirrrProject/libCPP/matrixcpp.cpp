@@ -1,20 +1,20 @@
 #include "matrixcpp.h"
 #include <stdlib.h>
 
-MatrixCPP::MatrixCPP(int height, int width)
+MatrixCPP::MatrixCPP(const int height, const int width)
 {
     this->width = width;
     this->height = height;
-    data=(int **)malloc(height*sizeof(int*));
+    data = new int*[height];
     for (int i = 0; i<height; i++)
-            data[i]=(int*)malloc(width*sizeof(int));
+        data[i] = new int[width];
     fillSpiralMatrix();
 }
 
 MatrixCPP::~MatrixCPP(){
     for(int i = 0; i < height; i++)
-        delete data[i];
-    delete data;
+        delete[] data[i];
+    delete[] data;
 }
 
 void MatrixCPP::fillSpiralMatrix(){
@@ -37,7 +37,7 @@ void MatrixCPP::fillSpiralMatrix(){
     }
 }
 
-int MatrixCPP::getCell(int y, int x){
+int MatrixCPP::getCell(const int y, const int x){
     if (x<0||y<0||x>=width||y>=height)
         return 0;
     return data[y][x];

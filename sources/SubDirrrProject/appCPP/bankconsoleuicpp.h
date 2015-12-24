@@ -5,7 +5,6 @@
 class BankConsoleUICPP
 {
 public:
-    BankConsoleUICPP();
     void doWork();
 };
 

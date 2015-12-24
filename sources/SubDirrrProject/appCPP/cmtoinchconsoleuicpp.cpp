@@ -4,12 +4,6 @@
 #include <iostream>
 using namespace std;
 
-CmToInchConsoleUICPP::CmToInchConsoleUICPP()
-{
-
-}
-
-
 void CmToInchConsoleUICPP::doWork()
 {
     int a;

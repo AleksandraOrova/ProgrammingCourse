@@ -5,7 +5,6 @@
 class MatrixConsoleUICPP
 {
 public:
-    MatrixConsoleUICPP();
     void doWork(char*, char*);
     void printMatrix(MatrixCPP);
 };

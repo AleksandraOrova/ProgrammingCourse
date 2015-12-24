@@ -1,10 +1,7 @@
 #include "rectangle.h"
 #include "exception.h"
 
-Rectangle::Rectangle(const double width, const  double height){
-    this->height = height;
-    this->width = width;
-}
+Rectangle::Rectangle(const double width, const  double height) :height(height), width(width){}
 
 int Rectangle::getWidth(){
     return width;

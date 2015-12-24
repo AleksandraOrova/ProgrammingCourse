@@ -1,7 +1,7 @@
 #include "exception.h"
 #include "bankcpp.h"
 
-double BankCPP::compoundInterest(double summa, double percent)
+double BankCPP::compoundInterest(const double summa, const double percent)
 {
     if(summa < 0)
         throw UnderNullExceptionSumma(summa);

@@ -5,6 +5,15 @@ Set::Set()
 {
     root = nullptr;
 }
+Set::Set(const Set& source)
+{
+    Node *temp = source.root;
+    root = nullptr;
+    while(temp!=nullptr){
+        addToBeg(temp->getData());
+        temp = temp->getNext();
+    }
+}
 
 Set::~Set()
 {

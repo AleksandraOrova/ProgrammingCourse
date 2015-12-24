@@ -4,11 +4,6 @@
 #include <iostream>
 using namespace std;
 
-BankConsoleUICPP::BankConsoleUICPP()
-{
-
-}
-
 void BankConsoleUICPP::doWork()
 {
     double summa, percent;

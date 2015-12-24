@@ -2,11 +2,6 @@
 #include"stringscpp.h"
 #define N 255
 
-StringsConsoleUICPP::StringsConsoleUICPP()
-{
-
-}
-
 void StringsConsoleUICPP::doWork(){
     int n;
     cout << "Input number of lines ";

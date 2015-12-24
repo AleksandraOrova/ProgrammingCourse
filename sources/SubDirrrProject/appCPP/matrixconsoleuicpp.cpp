@@ -4,11 +4,6 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-//MatrixConsoleUICPP matrixWorker; matrixWorker.doWork();
-MatrixConsoleUICPP::MatrixConsoleUICPP()
-{
-
-}
 
 void MatrixConsoleUICPP::printMatrix(MatrixCPP matrix){
     int i, j;

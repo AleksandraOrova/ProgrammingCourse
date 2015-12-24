@@ -3,6 +3,8 @@
 
 class CmToInchCPP
 {
+private:
+    static const double KOEFF = 2.54f;
 public:
     static double cm_to_inch(double);
     static double inch_to_cm(double);
