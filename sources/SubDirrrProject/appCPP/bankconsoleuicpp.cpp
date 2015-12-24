@@ -4,6 +4,15 @@
 #include <iostream>
 using namespace std;
 
+<<<<<<< HEAD
+=======
+/// Зачем пустой конструктор
+BankConsoleUICPP::BankConsoleUICPP()
+{
+
+}
+
+>>>>>>> 745ff464e96b4d4520f39862ad444ec10491c09c
 void BankConsoleUICPP::doWork()
 {
     double summa, percent;
