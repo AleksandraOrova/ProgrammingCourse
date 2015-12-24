@@ -26,7 +26,6 @@ Set::~Set()
     }
 }
 
-/// Нужен конструктор копирования
 Set Set::copy(Set source)
 {
     Node *temp = source.root;
@@ -82,7 +81,6 @@ bool Set::contains(int data)
 {
     return (searchByKey(data)!=nullptr);
 }
-
 
 Set Set::intersect(Set s)
 {

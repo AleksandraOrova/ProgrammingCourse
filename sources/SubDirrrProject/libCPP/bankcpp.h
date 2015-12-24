@@ -1,8 +1,6 @@
 #ifndef BANKCPP_H
 #define BANKCPP_H
 
-
-/// где консты?
 class BankCPP
 {
 public:

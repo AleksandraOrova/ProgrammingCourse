@@ -1,7 +1,6 @@
 #ifndef CMTOINCHCPP_H
 #define CMTOINCHCPP_H
 
-/// где консты?
 class CmToInchCPP
 {
 private:

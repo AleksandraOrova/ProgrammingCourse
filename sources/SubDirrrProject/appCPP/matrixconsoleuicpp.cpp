@@ -4,17 +4,6 @@
 #include <iostream>
 #include <fstream>
 using namespace std;
-<<<<<<< HEAD
-=======
-//MatrixConsoleUICPP matrixWorker; matrixWorker.doWork();
-
-
-/// Зачем пустой конструктор
-MatrixConsoleUICPP::MatrixConsoleUICPP()
-{
-
-}
->>>>>>> 745ff464e96b4d4520f39862ad444ec10491c09c
 
 void MatrixConsoleUICPP::printMatrix(MatrixCPP matrix){
     int i, j;

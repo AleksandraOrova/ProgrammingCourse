@@ -1,15 +1,7 @@
 #include "rectangle.h"
 #include "exception.h"
 
-<<<<<<< HEAD
 Rectangle::Rectangle(const double width, const  double height) :height(height), width(width){}
-=======
-/// Добавить список инициализации
-Rectangle::Rectangle(const double width, const  double height){
-    this->height = height;
-    this->width = width;
-}
->>>>>>> 745ff464e96b4d4520f39862ad444ec10491c09c
 
 int Rectangle::getWidth(){
     return width;

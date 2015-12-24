@@ -2,16 +2,6 @@
 #include"stringscpp.h"
 #define N 255
 
-<<<<<<< HEAD
-=======
-
-/// Зачем пустой конструктор
-StringsConsoleUICPP::StringsConsoleUICPP()
-{
-
-}
-
->>>>>>> 745ff464e96b4d4520f39862ad444ec10491c09c
 void StringsConsoleUICPP::doWork(){
     int n;
     cout << "Input number of lines ";
