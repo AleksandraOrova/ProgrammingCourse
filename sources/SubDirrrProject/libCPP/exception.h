@@ -45,14 +45,5 @@ private:
     int height;
 };
 
-class WrongArraySize : public std::exception {
-public:
-    WrongArraySize(const int size) : size(size) {}
-    int GetSize() const {return size;}
-private:
-    int size;
-};
-
-
 #endif // EXCEPTION
 

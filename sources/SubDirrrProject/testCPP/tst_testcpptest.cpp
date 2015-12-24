@@ -1,10 +1,10 @@
 #include <QString>
 #include <QtTest>
-#include <bankcpp.h>
-#include <rectangle.h>
-#include <cmtoinchcpp.h>
-#include <matrixcpp.h>
-#include <stringscpp.h>
+#include "bankcpp.h"
+#include "cmtoinchcpp.h"
+#include "matrixcpp.h"
+#include "stringscpp.h"
+#include "exception.h"
 class TestCPPTest : public QObject
 {
     Q_OBJECT
@@ -13,10 +13,8 @@ public:
     TestCPPTest();
 
 private Q_SLOTS:
-    void testCase1();
     void bank_test();
-    void home_test_1();
-    void home_test_2();
+    void home_test();
     void cm2inch_test();
     void matrix_test();
     void strings_test();
@@ -29,21 +27,15 @@ TestCPPTest::TestCPPTest(){
 void TestCPPTest::bank_test(){
     QCOMPARE(BankCPP().compoundInterest(200, 25), 610.35f);
     QCOMPARE(BankCPP().compoundInterest(10, 90), 247.60f);
-    //QVERIFY_EXCEPTION_THROWN(BankCPP.compoundInterest(200, -3), "<0");
+    QVERIFY_EXCEPTION_THROWN(BankCPP::compoundInterest(-100, 50), UnderNullExceptionSumma);
+    QVERIFY_EXCEPTION_THROWN(BankCPP::compoundInterest(100, 105), MoreThanHundred);
 }
 
-void TestCPPTest::home_test_1(){
+void TestCPPTest::home_test(){
     Rectangle area(40,70);
     Rectangle rect1(30,30);
     Rectangle rect2(30,30);
-   QVERIFY2(area.canInsert(rect1, rect2), "Failure");
-}
-
-void TestCPPTest::home_test_2(){
-    Rectangle area(80,30);
-    Rectangle rect1(40,50);
-    Rectangle rect2(20,20);
-   QVERIFY2(area.canInsert(rect1, rect2), "Failure");
+    QVERIFY2(area.canInsert(rect1, rect2), "Failure");
 }
 
 void TestCPPTest::cm2inch_test(){
@@ -56,6 +48,7 @@ void TestCPPTest::cm2inch_test(){
                                  // 1.18    3.00
                                  // 1.57    4.00
                                  // 1.97    5.00
+    QVERIFY_EXCEPTION_THROWN(CmToInchCPP::cm_to_inch(-6), UnderNullExceptionCm);
 }
 
 void TestCPPTest::matrix_test(){
@@ -98,7 +91,7 @@ void TestCPPTest::strings_test(){
 
     for (int i = 0; i < 5; ++i)
     {
-        for(int j = 0; j < tmpText[i].length(); j++)
+        for (int j = 0; j < tmpText[i].length(); j++)
         {
             QCOMPARE(tmpText[i][j], resText[i][j]);
         }
@@ -106,5 +99,6 @@ void TestCPPTest::strings_test(){
 }
 
 QTEST_APPLESS_MAIN(TestCPPTest)
+
 
 #include "tst_testcpptest.moc"
